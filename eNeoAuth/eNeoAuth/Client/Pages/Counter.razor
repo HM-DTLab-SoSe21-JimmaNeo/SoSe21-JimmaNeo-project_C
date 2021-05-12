@@ -1,0 +1,46 @@
+﻿@page "/counter"
+@attribute [Authorize(Roles = "CanViewCounterPage")]
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<AuthorizeView Roles="CanClickCounterButton">
+    <Authorized>
+        <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+    </Authorized>
+    <NotAuthorized>
+        You do not have permission to click the counter button. Please ask for permission.
+    </NotAuthorized>
+</AuthorizeView>
+
+<div style="color:red">
+    <br />
+    @Message
+</div>
+
+@code {
+
+    private ClaimsPrincipal User;
+    private string Message = "";
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        Message = "";
+
+        if (User.Identity.IsAuthenticated && User.IsInRole("CanIncrementCounter"))
+            currentCount++;
+        else
+            Message = "You do not have permission to increment the counter!";
+    }
+
+    protected async override Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider
+           .GetAuthenticationStateAsync();
+
+        User = authState.User;
+    }
+}
