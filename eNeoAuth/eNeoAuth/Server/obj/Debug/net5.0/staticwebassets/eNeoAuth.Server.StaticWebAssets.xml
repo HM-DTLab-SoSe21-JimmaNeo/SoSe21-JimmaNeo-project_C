@@ -1,7 +1,0 @@
-﻿<StaticWebAssets Version="1.0">
-  <ContentRoot BasePath="/" Path="C:\Users\Daniel\source\repos\eNeoAuth\eNeoAuth\Client\bin\Debug\net5.0\wwwroot\" />
-  <ContentRoot BasePath="/" Path="C:\Users\Daniel\source\repos\eNeoAuth\eNeoAuth\Client\obj\Debug\net5.0\scopedcss\bundle\" />
-  <ContentRoot BasePath="/" Path="C:\Users\Daniel\source\repos\eNeoAuth\eNeoAuth\Client\wwwroot\" />
-  <ContentRoot BasePath="/Identity" Path="C:\Users\Daniel\.nuget\packages\microsoft.aspnetcore.identity.ui\5.0.5\staticwebassets\V4\" />
-  <ContentRoot BasePath="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication" Path="C:\Users\Daniel\.nuget\packages\microsoft.aspnetcore.components.webassembly.authentication\5.0.5\build\..\staticwebassets\" />
-</StaticWebAssets>
