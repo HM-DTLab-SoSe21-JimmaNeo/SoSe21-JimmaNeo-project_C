@@ -1,16 +1,8 @@
 ﻿@page "/ForumMainPage"
 <style>
 
-
     #top {
         text-align: center;
-    }
-
-    #logo-name {
-        color: red;
-        background-color: white;
-        display: inline-block;
-        font-size: 32px;
     }
 
     #navigation a {
@@ -21,6 +13,9 @@
         #navigation a:hover {
             color: red;
         }
+    #button {
+        padding: 8px;
+    }
 
     #main {
         text-align: left
@@ -29,32 +24,33 @@
 <h1 align="center">Upload Forum</h1>
 
 <div id="top">
-    <div id="logo-name">e-Neo</div>
+    
     <div id="image">
         <img src="Images/Logo.png" alt="Logo of e-Neo" />
     </div>
-    <div id="navigation">
-        <a href="general">General</a>
-        <a href="post">Posts</a>
-        <a href="upload">Upload</a>
-        <a href="top5">Top5</a>
-    </div>
+    
     <div id="main">
         <section id="General"> </section>
         <h2>General</h2>
-        <p>Hier sollen allgemeine Infos über die Upload Forum Page gegeben werden.</p>
+        <p>On this page you can find various uploads such as explanation videos or essays from other users. You can watch the posts, comment or give a like. You can also upload something yourself. Be creative and have fun:)</p>
 
         <section id="Posts"> </section>
         <h2>Posts</h2>
-        <p>Hier sollen allgemeine Infos über die Posts der anderen geteilt werden.</p>
+        <p>Here you can see a list of other users' uploads.</p>
+        <a id="button" class="btn btn-primary" href="post" role="button">See Posts...</a>
+        <p></p>
+
 
         <section id="Upload"> </section>
-        <h2>Upload</h2>
-        <p>Hier sollen allgemeine Infos über die Upload Forum Page gegeben werden.</p>
+        <h2>Your Uploads</h2>
+        <p>You can simply upload your post whether a picture, video or essay here. Before that, however, your post will be put on the waiting list until the moderator approves your post for other users. Don't wait too long to upload something :) You can also view, edit or delete your existing uploads.</p>
+        <a id="button" class="btn btn-primary" href="upload" role="button">Upload...</a>
+        <p></p>
+
 
         <section id="Top5"> </section>
         <h2>Top5</h2>
-        <p>Hier sollen Infos über Top 5 Prinzip gegeben werden.</p>
+        <p>The five most viewed and positively commented posts make it into the top five arena. Pay attention to the quality of the post! Let's see how fast you make it into the top five arena. Good luck:)</p>
 
     </div>
 </div>
