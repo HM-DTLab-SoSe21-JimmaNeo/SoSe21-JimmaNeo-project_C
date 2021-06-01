@@ -21,11 +21,13 @@ namespace SEIIApp.Shared
 
         public string Title { get; set; }
         public DateTime UploadDate { get; set; }
-        public DateTime LastChange { get; set; }
         public string Content { get; set; }
         public byte[] Attachment { get; set; }
         public int Likes { get; set; }
         public int CommentCounter { get; set; }
+        public string Comment { get; set; }
+        public string Category { get; set; }
+        public UrlAttribute Link { get; set; }
   
     }
 }

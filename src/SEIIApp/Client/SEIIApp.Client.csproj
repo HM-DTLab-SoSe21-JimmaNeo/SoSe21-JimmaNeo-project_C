@@ -4,7 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(RunConfiguration)' == 'SEIIApp' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'SEIIApp' ">
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
 
   <ItemGroup>
     <None Include="wwwroot\Images\Logo.png" />

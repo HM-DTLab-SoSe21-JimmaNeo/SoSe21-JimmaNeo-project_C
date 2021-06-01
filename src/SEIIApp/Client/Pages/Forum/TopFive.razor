@@ -1,0 +1,102 @@
+﻿@page "/TopFive"
+@using SEIIApp.Shared
+
+<style>
+    
+    #navigation a {
+        padding:8px;
+    }
+</style>
+<div id="navigation">
+    <a href="ForumMainPage">Forum</a>
+    <a href="post">Posts</a>
+    <a href="upload">Upload</a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <table class="table">
+          
+                <thead>
+                    <tr>
+                        <th scope="col">Rank Number</th>
+                        <th scope="col">PostID</th>
+                        <th scope="col">UserID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">UploadDate</th>
+                        <th scope="col">Attachement</th>
+                        <th scope="col">Likes</th>
+                        <th scope="col">Comment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1.</th>
+                        <td>649</td>
+                        <td>klausPeter</td>
+                        <td>Klappen eines herzes</td>
+                        <td>herz</td>
+                        <td>30.05.2021</td>
+                        <td><div id="navigation">
+                               <a href="https://www.apotheken-umschau.de/mein-koerper/herz-gefaesse/herz-und-gefaesse-aufbau-und-funktion-708169.html">Link</a>
+                             
+                         </div></td>
+                        <td>70</td>
+                        <td><a id="button" class="btn btn-primary" href="see Comments" role="button">see Comments</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2.</th>
+                        <td>649</td>
+                        <td>klausPeter</td>
+                        <td>Klappen eines herzes</td>
+                        <td>herz</td>
+                        <td>30.05.2021</td>
+                        <td>
+                            <div id="navigation">
+                               <a href="https://www.apotheken-umschau.de/mein-koerper/herz-gefaesse/herz-und-gefaesse-aufbau-und-funktion-708169.html">Link</a>
+                             
+
+                            </div>
+                        </td>
+                        <td>70</td>
+                        <td><a id="button" class="btn btn-primary" href="see Comments" role="button">see Comments</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3.</th>
+                        <td>649</td>
+                        <td>klausPeter</td>
+                        <td>Klappen eines herzes</td>
+                        <td>herz</td>
+                        <td>30.05.2021</td>
+                        <td>
+                            <div id="navigation">
+                                <a href="https://www.youtube.com/watch?v=hCnyiU365f8">Link</a>
+
+                            </div>
+                        </td>
+                        <td>70</td>
+                        <td><a id="button" class="btn btn-primary" href="see Comments" role="button">see Comments</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </tr>
+    </thead>
+        
+</table>
+
+@code {
+
+    // SEE Quiz Def
+
+    // select post with searchbar // with categories // oder drop down liste der Categorien
+
+    // set Commentar
+
+    // giv it a like method
+
+    // select top 5 likes Post with a method with a link and /
+
+
+}
+
