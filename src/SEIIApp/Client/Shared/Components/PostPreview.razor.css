@@ -1,0 +1,13 @@
+.thumbnail{
+    height: 144px;
+    width: 256px;
+    background-color: #555;
+}
+.previewFountain{
+    padding: 0;
+    border: none;
+    background: none;
+}
+.title{
+    alignment: left;
+}

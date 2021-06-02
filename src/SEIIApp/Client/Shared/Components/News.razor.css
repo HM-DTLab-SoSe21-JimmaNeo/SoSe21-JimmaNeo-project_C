@@ -1,0 +1,17 @@
+.news_wrapper {
+    display: inline-flex;
+    margin-right: 120px;
+    margin-left: 120px;
+}
+
+.news_thumbnail {
+    flex: 2;
+    width: 512px;
+    height: 288px;
+    color: #1b1e21;
+}
+
+.news_panel {
+    flex: 1;
+    margin-left: 50px;
+}

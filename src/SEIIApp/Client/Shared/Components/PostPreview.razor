@@ -1,0 +1,20 @@
+@using SEIIApp.Client.Shared.Models.Posting
+
+<div>
+<button @onclick="ToPost" class="previewFountain">
+    <div class="thumbnail"></div>
+    <div class="title">
+        @Post.Title
+    </div>
+</button>
+</div>
+
+@code {
+    [Parameter]
+    public Post Post { get; set; }
+
+    private void ToPost()
+    {
+        //TODO add link to post page
+    }
+}
