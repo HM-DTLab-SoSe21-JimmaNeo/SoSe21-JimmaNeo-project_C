@@ -63,8 +63,8 @@ namespace SEIIApp.Server.Controllers
         }
 
 
-        [Route("api/PostDefinition/post/delete")]
-        [HttpGet("{PostID}")]
+       
+        [HttpDelete("{PostID}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -74,20 +74,23 @@ namespace SEIIApp.Server.Controllers
         }
 
 
-        [Route("api/PostDefinition/post/Add")]
+   
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public void AddPost([FromBody] PostDto post)
+        public ActionResult<PostDto> AddPost([FromBody] PostDto post)
         {
             if (ModelState.IsValid)
             {
                 var mappedModel = Mapper.Map<PostDefinition>(post);
                 PostDefinitonService.Save(mappedModel);
+                var model = Mapper.Map<PostDto>(mappedModel);
+                return Ok(model);
             }
-            BadRequest(ModelState);
+            return BadRequest(ModelState);
         }
+        
 
     }
 }

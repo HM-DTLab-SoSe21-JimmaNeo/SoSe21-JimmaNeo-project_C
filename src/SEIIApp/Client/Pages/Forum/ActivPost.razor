@@ -1,5 +1,7 @@
 ﻿@page "/post/activpost"
 @page "/post/activpost/{Category}"
+@page "/post/activpost/top5/{postId}"
+
 @inject NavigationManager NavigationManager
 @inject SEIIApp.Client.Services.PostServiceAccess PostServiceAccess
 @using SEIIApp.Shared;
@@ -42,15 +44,15 @@
 @code {
 
     /*
-    Die MEthoden rufen den Injecteten CLient.Service.PostServiceAcess auf 
-    PostService Access ruft den Controller mit der Route api/postdefinition auf 
-    // Forum COntroller nimmt dann den Services Forum Services her um mit der DB zu Kommunizieren 
-    // in der Server.STartup wurde der Service ForumServices Scoped hinzugefügt // 
+    Die MEthoden rufen den Injecteten CLient.Service.PostServiceAcess auf
+    PostService Access ruft den Controller mit der Route api/postdefinition auf
+    // Forum COntroller nimmt dann den Services Forum Services her um mit der DB zu Kommunizieren
+    // in der Server.STartup wurde der Service ForumServices Scoped hinzugefügt //
     // in der Client.Programm wurde der Services Hinzugefügt
 
-    // erweiterungen Nuget Automapper Für das mappen von DTO Objecten zu Definition Objecten 
-      // das mappen findet im Forum Controller statt -> von dem Client bekommt er eine DTo Objekt und vom Server ein Definition Objekt 
-    
+    // erweiterungen Nuget Automapper Für das mappen von DTO Objecten zu Definition Objecten
+      // das mappen findet im Forum Controller statt -> von dem Client bekommt er eine DTo Objekt und vom Server ein Definition Objekt
+
     */
 
 
@@ -58,20 +60,20 @@
     [Parameter]
     public String Category { get; set; }
 
+    [Parameter]
+    public int postId { get; set; }
+
     public PostDto[] posts { get; set; }
+
+    public PostDto activPost { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-
+        if (Category == null) {
+            selectPost();
+        }
         posts = await PostServiceAccess.GetAllPosts();
     }
-
-    public void incrementLike(int postId)
-    {
-        var currentPost = posts.Where(post => post.PostId == postId).FirstOrDefault();
-    }
-
-    public void writeComment() { }
 
     // wird correct an den Post Controller weitergegeben
     protected override async Task OnParametersSetAsync()
@@ -79,5 +81,14 @@
         await base.OnParametersSetAsync();
         posts = await PostServiceAccess.GetAllPosts();
     }
+
+    public void selectPost()
+    {
+        activPost = posts.Where(post => post.PostId == postId).FirstOrDefault();
+    }
+    public void incrementLike(int postID) { 
+    }
+
+
 
 }

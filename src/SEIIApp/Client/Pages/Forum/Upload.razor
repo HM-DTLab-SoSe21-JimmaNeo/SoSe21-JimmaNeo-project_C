@@ -1,5 +1,6 @@
 ﻿@page "/upload"
 
+
 @using SEIIApp.Shared
 @inject IJSRuntime jsRunTime
 @inject NavigationManager NavigationManager
@@ -18,18 +19,11 @@
     <h1>Your Uploads</h1>
 </div>
 
-
-
+<button class="btn btn-success" style="float:left;margin-right:5px;" @onclick="SavePost">Save</button>
 
 
 @code {
-    /*
-    <div style="float:left;margin-right:5px;">
-    <label>Date</label>
-    <input type="date" @bind="@currentPost.UploadDate" />
-    <input type="text" @bind="@currentPost.Title" />
-</div>
-*/
+
     public PostDto[] posts { get; set; }
 
     public PostDto currentPost { get; set; }
@@ -37,6 +31,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+
         posts = await PostServiceAccess.GetAllPosts();
     }
 
@@ -46,12 +41,15 @@
         currentPost = new PostDto();
     }
 
-    /*
-   private void Safe()
-   {
-       PostServiceAccess.Save(currentPost);
-       currentPost = new PostDto();
-       GetPosts();
-   }
-   */
+    private async void SavePost()
+    {
+        AddNew();
+        currentPost.UserId = 12;
+        currentPost.Title = "warummmmmm suckt das so";
+        currentPost.Category = "kopf";
+        await PostServiceAccess.Save(currentPost);
+
+    }
+
+
 }

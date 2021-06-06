@@ -4,7 +4,10 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 
-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 
 
@@ -40,19 +43,20 @@ namespace SEIIApp.Client.Services
         }
 
 
-        private string Pdfs(String inputType)
+   
+        public async Task<PostDto> Save(PostDto post)
         {
-            return $"api/PostDefinition/post/{inputType}";
-        }
-
-        public async void Save(PostDto post)
-        {
-            await HttpClient.PutAsJsonAsync(Pdfs("add"), post);
+            var response = await HttpClient.PutAsJsonAsync(GetPostsUrl(), post);
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return await response.DeserializeResponseContent<PostDto>();
+            }
+            else return null;
         }
 
         public async void Delete(int postId)
         {
-            await HttpClient.PutAsJsonAsync(Pdfs("delete"), postId);
+            await HttpClient.DeleteAsync(GetPostUrlWithId(postId));
         }
 
     }
