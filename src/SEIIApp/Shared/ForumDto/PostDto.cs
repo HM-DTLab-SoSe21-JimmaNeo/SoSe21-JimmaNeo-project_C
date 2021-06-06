@@ -11,12 +11,8 @@ namespace SEIIApp.Shared
     public class PostDto
     {
             
-        [Key]
         public int PostId { get; set; }
-
         public int UserId { get; set; }
-
-        [Required]
         public bool IsAuthorized { get; set; }
 
         public string Title { get; set; }
@@ -28,6 +24,8 @@ namespace SEIIApp.Shared
         public string Comment { get; set; }
         public string Category { get; set; }
         public UrlAttribute Link { get; set; }
-  
+
+      
+
     }
 }

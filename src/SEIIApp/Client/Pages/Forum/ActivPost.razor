@@ -1,0 +1,83 @@
+﻿@page "/post/activpost"
+@page "/post/activpost/{Category}"
+@inject NavigationManager NavigationManager
+@inject SEIIApp.Client.Services.PostServiceAccess PostServiceAccess
+@using SEIIApp.Shared;
+
+
+<h1>@Category</h1>
+<p>Current Category: @Category</p>
+
+@if (posts == null)
+{
+    <p>there are no Current Posts in this Category Category: @Category</p>
+}
+
+@if (posts != null)
+{
+    @foreach (PostDto post in posts)
+    {
+        <div class="row justify-content-center m-3">
+            <div class="col-sm-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h1>@post.Title</h1>
+                    </div>
+                    <div class="card-body text-center">
+                        <img class="card-img-top" src="@post.Attachment" />
+                        <h4>Likes: @post.Likes</h4>
+                        <h4>Upload Date : @post.UploadDate</h4>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a>Likes: @post.Likes</a>
+                        <button @onclick="@(e => incrementLike(@post.PostId))">Like</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    }
+}
+@code {
+
+    /*
+    Die MEthoden rufen den Injecteten CLient.Service.PostServiceAcess auf 
+    PostService Access ruft den Controller mit der Route api/postdefinition auf 
+    // Forum COntroller nimmt dann den Services Forum Services her um mit der DB zu Kommunizieren 
+    // in der Server.STartup wurde der Service ForumServices Scoped hinzugefügt // 
+    // in der Client.Programm wurde der Services Hinzugefügt
+
+    // erweiterungen Nuget Automapper Für das mappen von DTO Objecten zu Definition Objecten 
+      // das mappen findet im Forum Controller statt -> von dem Client bekommt er eine DTo Objekt und vom Server ein Definition Objekt 
+    
+    */
+
+
+
+    [Parameter]
+    public String Category { get; set; }
+
+    public PostDto[] posts { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        posts = await PostServiceAccess.GetAllPosts();
+    }
+
+    public void incrementLike(int postId)
+    {
+        var currentPost = posts.Where(post => post.PostId == postId).FirstOrDefault();
+    }
+
+    public void writeComment() { }
+
+    // wird correct an den Post Controller weitergegeben
+    protected override async Task OnParametersSetAsync()
+    {
+        await base.OnParametersSetAsync();
+        posts = await PostServiceAccess.GetAllPosts();
+    }
+
+}

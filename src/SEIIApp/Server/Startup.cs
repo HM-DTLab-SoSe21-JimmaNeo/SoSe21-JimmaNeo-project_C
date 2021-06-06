@@ -2,10 +2,15 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
+using SEIIApp.Server.DataAccess;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace SEIIApp.Server {
     public class Startup {
@@ -21,10 +26,17 @@ namespace SEIIApp.Server {
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.AddDbContext<DatabaseContext>(options => {
+                options.UseInMemoryDatabase("InMemoryDb");
+            });
+
+            services.AddScoped<Services.ForumService>();
+            services.AddAutoMapper(typeof(Domain.DomainMapper));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, Services.ForumService forumService) {
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
                 app.UseWebAssemblyDebugging();

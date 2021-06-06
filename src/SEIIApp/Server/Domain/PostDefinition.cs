@@ -7,18 +7,20 @@ using System.Threading.Tasks;
 
 namespace SEIIApp.Server.Domain
 {
-    public class PostDEfinition
+    public class PostDefinition
     {
         [Key]
         public int PostId { get; set; }
 
         public int UserId { get; set; }
 
-        [ForeignKey("UserId")]
-        public UserDefinition User { get; set; }
+        //[ForeignKey("UserId")]
+        //public UserDefinition User { get; set; }
 
-        [Required]
-        public bool IsAuthorized { get; set; }
+        public String Category { get; set; }
+
+        //[Required]
+        //public bool IsAuthorized { get; set; }
 
         public string Title { get; set; }
         public DateTime UploadDate { get; set; }
@@ -28,6 +30,7 @@ namespace SEIIApp.Server.Domain
         public int Likes { get; set; }
         public int CommentCounter { get; set; }
         public List<CommentDefinition> Comments { get; set; }
+
 
 
     }
