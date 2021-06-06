@@ -13,7 +13,7 @@ namespace SEIIApp.Shared
             
         public int PostId { get; set; }
         public int UserId { get; set; }
-        public bool IsAuthorized { get; set; }
+        //public bool IsAuthorized { get; set; }
 
         public string Title { get; set; }
         public DateTime UploadDate { get; set; }
@@ -23,7 +23,8 @@ namespace SEIIApp.Shared
         public int CommentCounter { get; set; }
         public string Comment { get; set; }
         public string Category { get; set; }
-        public UrlAttribute Link { get; set; }
+
+        //public UrlAttribute Link { get; set; }
 
       
 
