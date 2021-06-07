@@ -1,11 +1,11 @@
-@using SEIIApp.Client.Shared.Models.Posting
+@using SEIIApp.Shared.ContentDto
 
 <div class="PostPreviewWrapper">
-    @if (_posts.Length > RowCount)
+    @if (_contents.Length > RowCount)
     {
         for (var i = 0; i < RowCount * 3; i++)
         {
-            <PostPreview Post="_posts[i]"></PostPreview>
+            <PostPreview Post="_contents[i]"></PostPreview>
         }
     }
 </div>
@@ -15,15 +15,15 @@
     [Parameter]
     public int RowCount { get; set; }
     
-    private Post[] _posts = new Post[] {
-        new Essay("Der OP"), 
-        new Essay("Neonatologie"), 
-        new Essay("Diagnose"),
-        new Essay("Test 1"),
-        new Essay("Test 2"),
-        new Essay("Test 3"),
-        new Essay("Test 4"),
-        new Essay("Test 5"),
-        new Essay("Test 6"),
+    private Content[] _contents = new Content[] {
+        new Paper("Der OP"), 
+        new Video("Neonatologie"), 
+        new Video("Diagnose"),
+        new Paper("Test 1"),
+        new Paper("Test 2"),
+        new Paper("Test 3"),
+        new Paper("Test 4"),
+        new Paper("Test 5"),
+        new Paper("Test 6"),
     };
 }
