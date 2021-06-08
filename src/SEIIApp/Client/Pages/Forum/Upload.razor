@@ -24,8 +24,7 @@
     <input type="text" @bind="@currentPost.Title" />
     <label>Category</label>
     <input type="text" @bind="@currentPost.Category" />
-    <label>PostID</label>
-    <input type="text" @bind="@currentPost.PostId" />
+ 
 </div>
 
 <button class="btn btn-success" style="float:left;margin-right:5px;" @onclick="SavePost">Save</button>
@@ -108,10 +107,12 @@
 
     private async void SavePost()
     {
+
         if (currentPost != null)
         {
             currentPost.UserId = currentuserId;
             currentPost.UploadDate = DateTime.Now;
+            currentPost.PostId = PostDto.inkrementPostId++;
             await PostServiceAccess.Save(currentPost);
             GetAllMyPosts();
         }

@@ -97,10 +97,11 @@
         activPost = posts.Where(post => post.PostId == postId).FirstOrDefault();
     }
 
+    // top Five oder als Parameter für einen Kiurs ind er route übergeben / bzw. die ID
     async public void incrementLike(PostDto post)
     {
         post.Likes++;
-        await PostServiceAccess.Save(post);
+        post = await PostServiceAccess.Save(post);
 
     }
 

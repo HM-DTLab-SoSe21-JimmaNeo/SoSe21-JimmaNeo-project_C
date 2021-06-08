@@ -35,18 +35,20 @@ namespace SEIIApp.Server.Services
         }
        
 
-
         public PostDefinition GetPostWithId(int id)
         {
             return GetQueryablePostDefinition().Where(post => post.PostId == id).FirstOrDefault();
-            //FirstOrDefault liefert das erste gefundene Objekt oder null zurück
+            //FirstOrDefault liefert das erste gefundene Objekt oder null zurück 
         }
 
         public PostDefinition[] GetPostwithCategory(String category)
         {
             return GetQueryablePostDefinition().Where(post => post.Category == category).ToArray();
-            //FirstOrDefault liefert das erste gefundene Objekt oder null zurück
+            //returns liste wo die bendingung zutrifft
         }
+
+
+
 
         public PostDefinition AddPost(PostDefinition post)
         {
@@ -62,22 +64,23 @@ namespace SEIIApp.Server.Services
             DatabaseContext.SaveChanges();
             }
 
-            public PostDefinition Save(PostDefinition post)
-            {
-            DatabaseContext.PostDefinition.Add(post);
+ 
+
+
+
+         public PostDefinition Update(PostDefinition post)
+         {
+            var existingPost = GetPostWithId(post.PostId);
+
+            Mapper.Map(post, existingPost); //we can map into the same object type
+
+            DatabaseContext.PostDefinition.Update(existingPost);
             DatabaseContext.SaveChanges();
-                return post;
-            }
+            return existingPost;
+        }
 
 
-
-
-
-
-
-
-
-            public PostDefinition UploadPdf(int PostId, byte[] pdf)
+        public PostDefinition UploadPdf(int PostId, byte[] pdf)
             {
             DatabaseContext.PostDefinition.SingleOrDefault(x => x.PostId == PostId).Attachment = pdf;
             DatabaseContext.SaveChanges();

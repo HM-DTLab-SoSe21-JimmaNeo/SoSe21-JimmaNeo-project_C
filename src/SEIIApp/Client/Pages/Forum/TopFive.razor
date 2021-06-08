@@ -41,7 +41,7 @@
                             <th scope="row">1.</th>
                             <td>649</td>
                             <td>@post.Title</td>
-                            <td>Klappen eines herzes</td>
+                            <td>@post.UploadDate</td>
                             <td>@post.Category</td>
                             <td>30.05.2021</td>
                             <td>
@@ -50,7 +50,7 @@
 
                                 </div>
                             </td>
-                            <td>70</td>
+                            <td>@post.Likes</td>
                             <td><a id="button" class="btn btn-primary" href="see Comments" role="button">see Comments</a></td>
                         </tr>
 
@@ -68,9 +68,9 @@
 
     protected override async Task OnInitializedAsync()
     {
-       
+
         var ps = await PostServiceAccess.GetAllPosts();
-        posts = ps.ToArray(); // sortieren // strip array 
+        posts = ps.OrderBy(p => p.Likes).Take(5).ToArray();
     }
 
 

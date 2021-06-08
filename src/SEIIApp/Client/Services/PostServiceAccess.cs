@@ -41,7 +41,6 @@ namespace SEIIApp.Client.Services
             return HttpClient.GetFromJsonAsync<PostDto[]>(GetPostsUrl());
         }
 
-
             public async Task<PostDto> UploadPdf(PostDto post)
         {
             var response = await HttpClient.PutAsJsonAsync("api/PostDefinition/pdf", post);
@@ -54,6 +53,7 @@ namespace SEIIApp.Client.Services
 
         public async Task<PostDto> Save(PostDto post)
         {
+            // Url im Server.Controller , post object put -> sihe Server.Controller
             var response = await HttpClient.PutAsJsonAsync(GetPostsUrl(), post);
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
