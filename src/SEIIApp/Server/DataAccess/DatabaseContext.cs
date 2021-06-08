@@ -37,5 +37,7 @@ namespace SEIIApp.Server.DataAccess
 
         public DbSet<Domain.PostDefinition> PostDefinition { get; set; }
 
+        public DbSet<Domain.ModulDefinition> ModulDefinition { get; set; }
+
     }
 }

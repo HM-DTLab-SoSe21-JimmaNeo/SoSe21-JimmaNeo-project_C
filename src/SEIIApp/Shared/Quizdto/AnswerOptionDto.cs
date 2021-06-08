@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace SEIIApp.Server.Domain
+namespace SEIIApp.Shared
 {
-    public class AnswerOption
+    public class AnswerOptionDto
     {
-        [Key]
         public int AnswerOptionId { get; set; }
         public string Option { get; set; }
         public bool isCorrect { get; set; }
-
     }
 }
