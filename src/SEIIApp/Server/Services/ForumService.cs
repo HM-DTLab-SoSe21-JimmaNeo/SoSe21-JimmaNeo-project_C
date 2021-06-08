@@ -55,6 +55,7 @@ namespace SEIIApp.Server.Services
             return post;
         }
 
+
             public void DeletePdf(int PostId)
             {
             DatabaseContext.PostDefinition.SingleOrDefault(x => x.PostId == PostId).Attachment = null;
@@ -68,14 +69,27 @@ namespace SEIIApp.Server.Services
                 return post;
             }
 
+
+
+
+
+
+
+
+
             public PostDefinition UploadPdf(int PostId, byte[] pdf)
             {
             DatabaseContext.PostDefinition.SingleOrDefault(x => x.PostId == PostId).Attachment = pdf;
             DatabaseContext.SaveChanges();
                 return DatabaseContext.PostDefinition.SingleOrDefault(x => x.PostId == PostId);
             }
-        
 
+            public void DeletePost(int PostId)
+            {
+                PostDefinition p = DatabaseContext.PostDefinition.Where(x => x.PostId == PostId).FirstOrDefault();
+                DatabaseContext.PostDefinition.Remove(p);
+                DatabaseContext.SaveChanges();
+            }
 
     }
 }
