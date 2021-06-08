@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace SEIIApp.Server.Domain
+namespace SEIIApp.Shared
 {
-    public class QuestionDefinition
+    public class QuestionDto
     {
-        [Key]
         public int QuestionId { get; set; }
 
         public string Question { get; set; }
 
         public bool IsCorrect { get; set; }
 
-        public List<AnswerOptionDefinition> AnswerOptions { get; set; }
+        public List<AnswerOptionDto> AnswerOptions { get; set; }
     }
 }

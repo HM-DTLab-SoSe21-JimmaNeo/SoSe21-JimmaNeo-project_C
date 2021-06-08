@@ -1,8 +1,8 @@
-@using SEIIApp.Client.Shared.Models.Posting
+@using SEIIApp.Shared.ContentDto
 <div class="news_wrapper">
     <button class="news_thumbnail"></button>
     <div class="news_panel">
-        <h4 style="margin-bottom: 10px">@Post.Title</h4>
+        <h4 style="margin-bottom: 10px">@Content.Title</h4>
         <div>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
             sed diam nonumy eirmod tempor invidunt ut labore et dolore 
@@ -14,5 +14,5 @@
 </div>
 @code {
     [Parameter] 
-    public Post Post { get; set; }
+    public Content Content { get; set; }
 }

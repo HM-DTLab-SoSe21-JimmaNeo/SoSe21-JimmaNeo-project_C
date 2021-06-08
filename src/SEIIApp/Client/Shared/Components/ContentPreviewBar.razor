@@ -1,0 +1,29 @@
+@using SEIIApp.Shared.ContentDto
+
+<div class="PostPreviewWrapper">
+    @if (_contents.Length > RowCount)
+    {
+        for (var i = 0; i < RowCount * 3; i++)
+        {
+            <PostPreview Post="_contents[i]"></PostPreview>
+        }
+    }
+</div>
+
+
+@code {
+    [Parameter]
+    public int RowCount { get; set; }
+    
+    private Content[] _contents = new Content[] {
+        new Paper("Der OP"), 
+        new VideoDto("Neonatologie"), 
+        new VideoDto("Diagnose"),
+        new Paper("Test 1"),
+        new Paper("Test 2"),
+        new Paper("Test 3"),
+        new Paper("Test 4"),
+        new Paper("Test 5"),
+        new Paper("Test 6"),
+    };
+}

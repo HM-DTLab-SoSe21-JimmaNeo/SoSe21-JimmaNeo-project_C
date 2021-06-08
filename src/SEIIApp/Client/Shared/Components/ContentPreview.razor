@@ -1,17 +1,17 @@
-@using SEIIApp.Client.Shared.Models.Posting
+@using SEIIApp.Shared.ContentDto
 
 <div>
 <button @onclick="ToPost" class="previewFountain">
     <div class="thumbnail"></div>
     <div class="title">
-        @Post.Title
+        @Content.Title
     </div>
 </button>
 </div>
 
 @code {
     [Parameter]
-    public Post Post { get; set; }
+    public Content Content { get; set; }
 
     private void ToPost()
     {
