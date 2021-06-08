@@ -2,8 +2,6 @@
 @using SEIIApp.Shared.ContentDto
 @using SEIIApp.Client.Shared.Components
 
-@using SEIIApp.Client.Shared.Models.Posting
-
 <h2 style="margin-bottom: 80px; margin-top: 30px">News</h2>
 <News Content="Paper"></News>
 <div style="margin-bottom: 120px"></div>
@@ -13,6 +11,7 @@
 <PostPreviewBar RowCount="3"></PostPreviewBar>
 
 @code{
+
     public ContentPreview ContentPreview = new ContentPreview();
     public Paper Paper = new Paper("Test");
 }

@@ -37,7 +37,7 @@
                     </div>
                     <div class="card-footer text-center">
                         <a>Likes: @post.Likes</a>
-                        <button @onclick="@(e => incrementLike(@post.PostId))">Like</button>
+                        <button @onclick="@(e => incrementLike(@post))">Like</button>
                     </div>
 
                 </div>
@@ -97,8 +97,10 @@
         activPost = posts.Where(post => post.PostId == postId).FirstOrDefault();
     }
 
-    public void incrementLike(int postID)
+    async public void incrementLike(PostDto post)
     {
+        post.Likes++;
+        await PostServiceAccess.Save(post);
 
     }
 

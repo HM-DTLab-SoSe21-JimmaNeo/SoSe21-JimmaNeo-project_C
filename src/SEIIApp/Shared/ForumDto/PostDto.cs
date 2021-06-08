@@ -10,7 +10,6 @@ namespace SEIIApp.Shared
 {
     public class PostDto
     {
-            
         public int PostId { get; set; }
         public int UserId { get; set; }
         //public bool IsAuthorized { get; set; }
