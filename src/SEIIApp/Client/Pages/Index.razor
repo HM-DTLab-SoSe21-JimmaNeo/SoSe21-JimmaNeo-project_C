@@ -3,7 +3,7 @@
 @using SEIIApp.Client.Shared.Components
 
 <h2 style="margin-bottom: 80px; margin-top: 30px">News</h2>
-<News Post="Paper"></News>
+<News Content="Paper"></News>
 <div style="margin-bottom: 120px"></div>
 <h2 style="margin-bottom: 30px; margin-top: 50px">Your List</h2>
 <PostPreviewBar RowCount="1"></PostPreviewBar>
@@ -11,6 +11,6 @@
 <PostPreviewBar RowCount="3"></PostPreviewBar>
 
 @code{
-    public PostPreview PostPreview = new PostPreview();
+    public ContentPreview ContentPreview = new ContentPreview();
     public Paper Paper = new Paper("Test");
 }
