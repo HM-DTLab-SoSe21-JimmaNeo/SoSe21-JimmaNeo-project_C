@@ -1,10 +1,10 @@
 ﻿@page "/upload"
 
-
 @using SEIIApp.Shared
 @inject IJSRuntime jsRunTime
 @inject NavigationManager NavigationManager
 @inject SEIIApp.Client.Services.PostServiceAccess PostServiceAccess
+
 
 <style>
     #navigation a {
@@ -19,22 +19,118 @@
     <h1>Your Uploads</h1>
 </div>
 
-<button class="btn btn-success" style="float:left;margin-right:5px;" @onclick="SavePost">Save</button>
+<div style="float:left;margin-right:5px;">
+    <label>Title</label>
+    <input type="text" @bind="@currentPost.Title" />
+    <label>Category</label>
+    <input type="text" @bind="@currentPost.Category" />
+ 
+</div>
 
+<button class="btn btn-success" style="float:left;margin-right:5px;" @onclick="SavePost">Save</button>
+<button class="btn btn-primary" style="float:left;" @onclick="AddNew">Add New</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Upload Date</th>
+        </tr>
+    </thead>
+</table>
+<div>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>UploadDate</th>
+                <th>Category</th>
+                <th>Upload PDF</th>
+                <th>See Post</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+
+            @if (posts != null)
+            {
+                @foreach (PostDto post in posts)
+                {
+                    <tr>
+                        <td>@post.Title</td>
+                        <td>@post.UploadDate</td>
+                        <td>@post.Category</td>
+                        
+
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</div>
 
 @code {
+    /*@using BlazorInputFile
+    <td>
+                            <BlazorInputFile.InputFile OnChange="@(e => HandleFileSelected(e, post.PostId))" />
+                        </td>
+                        <td>
+                            @if (post.Attachment != null)
+                            {
+                                <button class="btn btn-primary" @onclick="@(e => DownloadPdf(@post.PostId))">Download PDF</button>
+                                <button class="btn btn-danger" @onclick="@(e => DeletePdf(@post.PostId))">Delete PDF</button>
+                            }
+                        </td>
+    public async Task<byte[]> FileSender(IFileListEntry file)
+    {
+        using (var ms = new System.IO.MemoryStream())
+        {
+            await file.Data.CopyToAsync(ms);
+            return ms.ToArray();
+        }
+    }
+
+    private void DeletePdf(int postId)
+    {
+        PostServiceAccess.DeletePdf(postId);
+    }
+
+    private void DownloadPdf(int postId)
+    {
+        var p = posts.FirstOrDefault(x => x.PostId == postId);
+        jsRunTime.InvokeVoidAsync("saveAsFile", "PdfFileName1", p.Attachment);
+
+    }
+      public async void HandleFileSelected(IFileListEntry[] files, int invoiceId)
+    {
+        var attch = await FileSender(files.FirstOrDefault());
+        currentPost.Attachment = attch;
+        SavePost();
+        GetAllMyPosts();
+    }
+
+
+    */
+
 
     public PostDto[] posts { get; set; }
 
-    public PostDto currentPost { get; set; }
+    public PostDto currentPost = new PostDto();
+
+    IFileListEntry file;
+
+    public int currentuserId = 12;
+
 
 
     protected override async Task OnInitializedAsync()
     {
-
-        posts = await PostServiceAccess.GetAllPosts();
+        await base.OnParametersSetAsync();
+        var ps = await PostServiceAccess.GetAllPosts();
+        posts = ps.Where(post => post.UserId == currentuserId).ToArray();
     }
-
 
     private void AddNew()
     {
@@ -43,13 +139,38 @@
 
     private async void SavePost()
     {
-        AddNew();
-        currentPost.UserId = 12;
-        currentPost.Title = "warummmmmm suckt das so";
-        currentPost.Category = "kopf";
-        await PostServiceAccess.Save(currentPost);
 
+        if (currentPost != null)
+        {
+            currentPost.UserId = currentuserId;
+            currentPost.UploadDate = DateTime.Now;
+            currentPost.PostId = PostDto.inkrementPostId++;
+            await PostServiceAccess.Save(currentPost);
+            GetAllMyPosts();
+        }
     }
 
 
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await base.OnParametersSetAsync();
+        GetAllMyPosts();
+
+    }
+
+    private async void GetAllMyPosts()
+    {
+
+        var ps = await PostServiceAccess.GetAllPosts();
+        posts = ps.Where(post => post.UserId == currentuserId).ToArray();
+    }
+
+
+
+
+
 }
+
+
+

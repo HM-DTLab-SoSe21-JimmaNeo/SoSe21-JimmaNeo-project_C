@@ -6,6 +6,11 @@
 @inject SEIIApp.Client.Services.PostServiceAccess PostServiceAccess
 @using SEIIApp.Shared;
 
+<div id="navigation">
+    <a href="ForumMainPage">Forum</a>
+    <a href="post">Posts</a>
+    <a href="TopFive">Top5</a>
+</div>
 
 <h1>@Category</h1>
 <p>Current Category: @Category</p>
@@ -32,7 +37,7 @@
                     </div>
                     <div class="card-footer text-center">
                         <a>Likes: @post.Likes</a>
-                        <button @onclick="@(e => incrementLike(@post.PostId))">Like</button>
+                        <button @onclick="@(e => incrementLike(@post))">Like</button>
                     </div>
 
                 </div>
@@ -41,6 +46,8 @@
         </div>
     }
 }
+
+
 @code {
 
     /*
@@ -69,26 +76,34 @@
 
     protected override async Task OnInitializedAsync()
     {
-        if (Category == null) {
+        if (Category == null)
+        {
             selectPost();
         }
-        posts = await PostServiceAccess.GetAllPosts();
+        var ps = await PostServiceAccess.GetAllPosts();
+        posts = ps.Where(p => p.Category == Category).ToArray();
     }
 
-    // wird correct an den Post Controller weitergegeben
     protected override async Task OnParametersSetAsync()
     {
         await base.OnParametersSetAsync();
-        posts = await PostServiceAccess.GetAllPosts();
+        var ps = await PostServiceAccess.GetAllPosts();
+        posts = ps.Where(p => p.Category == Category).ToArray();
     }
+
 
     public void selectPost()
     {
         activPost = posts.Where(post => post.PostId == postId).FirstOrDefault();
     }
-    public void incrementLike(int postID) { 
-    }
 
+    // top Five oder als Parameter für einen Kiurs ind er route übergeben / bzw. die ID
+    async public void incrementLike(PostDto post)
+    {
+        post.Likes++;
+        post = await PostServiceAccess.Save(post);
+
+    }
 
 
 }

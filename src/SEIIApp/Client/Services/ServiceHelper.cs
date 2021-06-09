@@ -10,7 +10,7 @@ namespace SEIIApp.Client.Services
 {
     public static class ServiceHelper
     {
-
+        // For return Siehe verweise die derzeit genutz werden 
         public static async Task<T> DeserializeResponseContent<T>(this HttpResponseMessage message)
         {
             var responseBytes = await message.Content.ReadAsByteArrayAsync();
