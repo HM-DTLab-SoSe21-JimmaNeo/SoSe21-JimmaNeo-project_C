@@ -10,6 +10,9 @@ namespace SEIIApp.Shared
 {
     public class PostDto
     {
+
+        public static int inkrementPostId;
+
         public int PostId { get; set; }
         public int UserId { get; set; }
         //public bool IsAuthorized { get; set; }

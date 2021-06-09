@@ -4,7 +4,7 @@
 @inject IJSRuntime jsRunTime
 @inject NavigationManager NavigationManager
 @inject SEIIApp.Client.Services.PostServiceAccess PostServiceAccess
-@using BlazorInputFile
+
 
 <style>
     #navigation a {
@@ -24,8 +24,7 @@
     <input type="text" @bind="@currentPost.Title" />
     <label>Category</label>
     <input type="text" @bind="@currentPost.Category" />
-    <label>PostID</label>
-    <input type="text" @bind="@currentPost.PostId" />
+ 
 </div>
 
 <button class="btn btn-success" style="float:left;margin-right:5px;" @onclick="SavePost">Save</button>
@@ -62,16 +61,7 @@
                         <td>@post.Title</td>
                         <td>@post.UploadDate</td>
                         <td>@post.Category</td>
-                        <td>
-                            <BlazorInputFile.InputFile OnChange="@(e => HandleFileSelected(e, post.PostId))" />
-                        </td>
-                        <td>
-                            @if (post.Attachment != null)
-                            {
-                                <button class="btn btn-primary" @onclick="@(e => DownloadPdf(@post.PostId))">Download PDF</button>
-                                <button class="btn btn-danger" @onclick="@(e => DeletePdf(@post.PostId))">Delete PDF</button>
-                            }
-                        </td>
+                        
 
                     </tr>
                 }
@@ -82,6 +72,47 @@
 </div>
 
 @code {
+    /*@using BlazorInputFile
+    <td>
+                            <BlazorInputFile.InputFile OnChange="@(e => HandleFileSelected(e, post.PostId))" />
+                        </td>
+                        <td>
+                            @if (post.Attachment != null)
+                            {
+                                <button class="btn btn-primary" @onclick="@(e => DownloadPdf(@post.PostId))">Download PDF</button>
+                                <button class="btn btn-danger" @onclick="@(e => DeletePdf(@post.PostId))">Delete PDF</button>
+                            }
+                        </td>
+    public async Task<byte[]> FileSender(IFileListEntry file)
+    {
+        using (var ms = new System.IO.MemoryStream())
+        {
+            await file.Data.CopyToAsync(ms);
+            return ms.ToArray();
+        }
+    }
+
+    private void DeletePdf(int postId)
+    {
+        PostServiceAccess.DeletePdf(postId);
+    }
+
+    private void DownloadPdf(int postId)
+    {
+        var p = posts.FirstOrDefault(x => x.PostId == postId);
+        jsRunTime.InvokeVoidAsync("saveAsFile", "PdfFileName1", p.Attachment);
+
+    }
+      public async void HandleFileSelected(IFileListEntry[] files, int invoiceId)
+    {
+        var attch = await FileSender(files.FirstOrDefault());
+        currentPost.Attachment = attch;
+        SavePost();
+        GetAllMyPosts();
+    }
+
+
+    */
 
 
     public PostDto[] posts { get; set; }
@@ -108,14 +139,18 @@
 
     private async void SavePost()
     {
+
         if (currentPost != null)
         {
             currentPost.UserId = currentuserId;
             currentPost.UploadDate = DateTime.Now;
+            currentPost.PostId = PostDto.inkrementPostId++;
             await PostServiceAccess.Save(currentPost);
             GetAllMyPosts();
         }
     }
+
+
 
     protected override async Task OnParametersSetAsync()
     {
@@ -132,35 +167,8 @@
     }
 
 
-    public async void HandleFileSelected(IFileListEntry[] files, int invoiceId)
-    {
-        var attch = await FileSender(files.FirstOrDefault());
-        currentPost.Attachment = attch;
-        SavePost();
-        GetAllMyPosts();
-    }
 
 
-    public async Task<byte[]> FileSender(IFileListEntry file)
-    {
-        using (var ms = new System.IO.MemoryStream())
-        {
-            await file.Data.CopyToAsync(ms);
-            return ms.ToArray();
-        }
-    }
-
-    private void DeletePdf(int postId)
-    {
-        PostServiceAccess.DeletePdf(postId);
-    }
-
-    private void DownloadPdf(int postId)
-    {
-        var p = posts.FirstOrDefault(x => x.PostId == postId);
-        jsRunTime.InvokeVoidAsync("saveAsFile", "PdfFileName1", p.Attachment);
-
-    }
 
 }
 

@@ -27,11 +27,16 @@ namespace SEIIApp.Server {
             services.AddControllersWithViews();
             services.AddRazorPages();
 
+            // opetion spater die Ip Config von BEanstalk DB
             services.AddDbContext<DatabaseContext>(options => {
                 options.UseInMemoryDatabase("InMemoryDb");
             });
 
+            // Hier Services Anlegen 
             services.AddScoped<Services.ForumService>();
+            // Modul Service 
+            services.AddScoped<Services.ModulService>();
+            // Services Mapper
             services.AddAutoMapper(typeof(Domain.DomainMapper));
         }
 

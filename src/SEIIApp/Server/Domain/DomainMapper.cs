@@ -16,6 +16,9 @@ namespace SEIIApp.Server.Domain
             CreateMap<PostDto, PostDefinition>();
             CreateMap<PostDefinition, PostDto>();
 
+            CreateMap<PostDto, PostDto>();
+            CreateMap<PostDefinition, PostDefinition>();
+
 
             // Create ModulDto
             CreateMap<ModulDto, ModulDefinition>();
