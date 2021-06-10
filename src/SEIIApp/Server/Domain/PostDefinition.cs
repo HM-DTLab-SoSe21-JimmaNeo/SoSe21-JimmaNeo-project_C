@@ -31,7 +31,10 @@ namespace SEIIApp.Server.Domain
         public int CommentCounter { get; set; }
         //public List<CommentDefinition> Comments { get; set; } = new List<CommentDefinition>();
 
+        public String UrlLink { get; set; }
+        //public List<String> Links { get; set; }
 
+        //public List<CommentDefinition> Comments { get; set; }
 
     }
 }

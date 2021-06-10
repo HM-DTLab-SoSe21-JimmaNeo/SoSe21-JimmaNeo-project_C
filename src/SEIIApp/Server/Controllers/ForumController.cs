@@ -16,7 +16,7 @@ namespace SEIIApp.Server.Controllers
     public class ForumController : ControllerBase
     {
 
-        
+
         private ForumService PostDefinitonService { get; set; }
         private IMapper Mapper { get; set; }
         public ForumController(ForumService post, IMapper mapper)
@@ -35,7 +35,6 @@ namespace SEIIApp.Server.Controllers
         {
             var post = PostDefinitonService.GetPostWithId(id);
             if (post == null) return StatusCode(StatusCodes.Status404NotFound);
-
             var mappedPost = Mapper.Map<PostDto>(post);
             return Ok(mappedPost);
         }
@@ -71,7 +70,7 @@ namespace SEIIApp.Server.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult<PostDto> insertOrUpdatePost([FromBody] PostDto post)
+        public ActionResult<PostDto> InsertOrUpdatePost([FromBody] PostDto post)
         {
             if (ModelState.IsValid)
             {
@@ -80,22 +79,59 @@ namespace SEIIApp.Server.Controllers
                 if (posts.Any(p => p.PostId == mappedModel.PostId))
                 {
                     PostDefinitonService.Update(mappedModel);
-                    
+
                 }
-                else {
+                else
+                {
                     mappedModel = PostDefinitonService.AddPost(mappedModel);
                 }
                 var model = Mapper.Map<PostDto>(mappedModel);
                 return Ok(model);
             }
             return BadRequest(ModelState);
-         
+
         }
 
 
+        [HttpDelete("{PostID}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult DeletePost([FromRoute] int PostID)
+        {
+            var post = PostDefinitonService.GetPostWithId(PostID);
+            if (post == null) return StatusCode(StatusCodes.Status404NotFound);
+            PostDefinitonService.DeletePost(PostID);
+            return Ok();
+        }
+
+    }
 
 
 
+    [ApiController]
+    [Route("api/ContentDefinition")]
+    public class ContentController : ControllerBase
+    {
+
+    }
+
+
+    [ApiController]
+    [Route("api/CommentController")]
+    public class CommentController : ControllerBase
+    {
+
+    }
+
+
+    [ApiController]
+    [Route("api/AttachmentController")]
+    public class AttachmentController : ControllerBase
+    {
+
+
+        /*
         [Route("api/PostDefinition/pdf")]
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -123,23 +159,13 @@ namespace SEIIApp.Server.Controllers
             if (post == null) return StatusCode(StatusCodes.Status404NotFound);
             PostDefinitonService.DeletePdf(PostID);
             return Ok();
-        }
+        }*/
 
 
 
-
-        [Route("api/PostDefinition/post")]
-        [HttpDelete("{PostID}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult DeletePost([FromRoute] int PostID)
-        {
-            var post = PostDefinitonService.GetPostWithId(PostID);
-            if (post == null) return StatusCode(StatusCodes.Status404NotFound);
-            PostDefinitonService.DeletePost(PostID);
-            return Ok();
-        }
 
     }
+
+
+
 }

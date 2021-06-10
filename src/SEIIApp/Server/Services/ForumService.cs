@@ -23,17 +23,14 @@ namespace SEIIApp.Server.Services
 
         private IQueryable<PostDefinition> GetQueryablePostDefinition()
         {
-            return DatabaseContext.PostDefinition;
-             
+            return DatabaseContext.PostDefinition;  
         }
 
         // Get ALL Posts
         public PostDefinition[] GetAllPosts()
         {  
-            return DatabaseContext.PostDefinition.ToArray();
-        
+           return DatabaseContext.PostDefinition.ToArray();
         }
-       
 
         public PostDefinition GetPostWithId(int id)
         {
@@ -46,8 +43,6 @@ namespace SEIIApp.Server.Services
             return GetQueryablePostDefinition().Where(post => post.Category == category).ToArray();
             //returns liste wo die bendingung zutrifft
         }
-
-
 
 
         public PostDefinition AddPost(PostDefinition post)
@@ -64,8 +59,6 @@ namespace SEIIApp.Server.Services
             DatabaseContext.SaveChanges();
             }
 
- 
-
 
 
          public PostDefinition Update(PostDefinition post)
@@ -78,7 +71,6 @@ namespace SEIIApp.Server.Services
             DatabaseContext.SaveChanges();
             return existingPost;
         }
-
 
         public PostDefinition UploadPdf(int PostId, byte[] pdf)
             {

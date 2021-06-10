@@ -13,76 +13,56 @@
     <a href="post">Posts</a>
     <a href="upload">Upload</a>
 </div>
-<table class="table">
-    
-<thead>
-    <tr>
-        <table class="table">
 
+        <table class="table">
             <thead>
                 <tr>
                     <th scope="col">Rank Number</th>
-                    <th scope="col">PostID</th>
-                    <th scope="col">UserID</th>
                     <th scope="col">Title</th>
                     <th scope="col">Category</th>
                     <th scope="col">UploadDate</th>
-                    <th scope="col">Attachement</th>
+                    <th scope="col">View Post</th>
                     <th scope="col">Likes</th>
                     <th scope="col">Comment</th>
                 </tr>
             </thead>
             @if (posts != null)
             {
+                int rank = 1;
                 @foreach (PostDto post in posts)
                 {
                     <tbody>
                         <tr>
-                            <th scope="row">1.</th>
-                            <td>649</td>
+                            <td>@rank</td>
                             <td>@post.Title</td>
-                            <td>@post.UploadDate</td>
                             <td>@post.Category</td>
-                            <td>30.05.2021</td>
+                            <td>@post.UploadDate</td>
+
                             <td>
                                 <div id="navigation">
-                                    <a href="https://www.apotheken-umschau.de/mein-koerper/herz-gefaesse/herz-und-gefaesse-aufbau-und-funktion-708169.html">Link</a>
-
+                                    <a href="/post/viewPost/@post.PostId">Link</a>
                                 </div>
                             </td>
                             <td>@post.Likes</td>
+
                             <td><a id="button" class="btn btn-primary" href="see Comments" role="button">see Comments</a></td>
                         </tr>
-
                     </tbody>
+                    rank = rank + 1; 
                 }
             }
             </table>
-    </tr>
-</thead>
+  
 
-</table>
 
 @code {
     PostDto[] posts { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-
         var ps = await PostServiceAccess.GetAllPosts();
         posts = ps.OrderByDescending(p => p.Likes).Take(5).ToArray();
     }
-
-
-    // SEE Quiz Def
-
-    // select post with searchbar // with categories // oder drop down liste der Categorien
-
-    // set Commentar
-
-    // giv it a like method
-
-    // select top 5 likes Post with a method with a link and /
 
 
 }

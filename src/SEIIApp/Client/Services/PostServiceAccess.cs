@@ -34,14 +34,16 @@ namespace SEIIApp.Client.Services
 
         public async Task<PostDto> GetPostsWithId(int id)
         {
-            return await HttpClient.GetFromJsonAsync<PostDto>(GetPostUrlWithId(id));
+            //return await HttpClient.GetFromJsonAsync<PostDto>(GetPostUrlWithId(id));
+
+            PostDto[] ps = await GetAllPosts();
+            return ps.Where(post => post.PostId == id).FirstOrDefault();
         }
 
         public Task<PostDto[]> GetAllPosts() { 
             return HttpClient.GetFromJsonAsync<PostDto[]>(GetPostsUrl());
         }
-
-            public async Task<PostDto> UploadPdf(PostDto post)
+          public async Task<PostDto> UploadPdf(PostDto post)
         {
             var response = await HttpClient.PutAsJsonAsync("api/PostDefinition/pdf", post);
             if (response.StatusCode == System.Net.HttpStatusCode.OK)

@@ -16,6 +16,7 @@
     <a href="ForumMainPage">Forum</a>
     <a href="post">Posts</a>
     <a href="TopFive">Top5</a>
+    <a href="Upload">Upload</a>
     <h1>Your Uploads</h1>
 </div>
 
@@ -46,8 +47,9 @@
                 <th>Title</th>
                 <th>UploadDate</th>
                 <th>Category</th>
-                <th>Upload PDF</th>
-                <th>See Post</th>
+                <th>Content</th>
+                <th>Option</th>
+                <th>Attachment</th>
             </tr>
         </thead>
         <tbody>
@@ -55,15 +57,25 @@
 
             @if (posts != null)
             {
+             
                 @foreach (PostDto post in posts)
                 {
-                    <tr>
-                        <td>@post.Title</td>
-                        <td>@post.UploadDate</td>
-                        <td>@post.Category</td>
-                        
+                <tr>
+                <td>@post.Title</td>
+                <td>@post.UploadDate</td>
+                <td>@post.Category</td>
+                <td>
+                    <div id="navigation">
+                        <a href="/ContentDefinition/@post.PostId">Content </a>
+                    </div>
+                </td>
 
-                    </tr>
+                <td>
+                    <button class="btn btn-danger" @onclick="@(e => DeletePost(@post.PostId))">Delete Post</button>
+                </td>
+                <td>Attachment</td>
+
+            </tr>
                 }
             }
         </tbody>
@@ -72,58 +84,14 @@
 </div>
 
 @code {
-    /*@using BlazorInputFile
-    <td>
-                            <BlazorInputFile.InputFile OnChange="@(e => HandleFileSelected(e, post.PostId))" />
-                        </td>
-                        <td>
-                            @if (post.Attachment != null)
-                            {
-                                <button class="btn btn-primary" @onclick="@(e => DownloadPdf(@post.PostId))">Download PDF</button>
-                                <button class="btn btn-danger" @onclick="@(e => DeletePdf(@post.PostId))">Delete PDF</button>
-                            }
-                        </td>
-    public async Task<byte[]> FileSender(IFileListEntry file)
-    {
-        using (var ms = new System.IO.MemoryStream())
-        {
-            await file.Data.CopyToAsync(ms);
-            return ms.ToArray();
-        }
-    }
-
-    private void DeletePdf(int postId)
-    {
-        PostServiceAccess.DeletePdf(postId);
-    }
-
-    private void DownloadPdf(int postId)
-    {
-        var p = posts.FirstOrDefault(x => x.PostId == postId);
-        jsRunTime.InvokeVoidAsync("saveAsFile", "PdfFileName1", p.Attachment);
-
-    }
-      public async void HandleFileSelected(IFileListEntry[] files, int invoiceId)
-    {
-        var attch = await FileSender(files.FirstOrDefault());
-        currentPost.Attachment = attch;
-        SavePost();
-        GetAllMyPosts();
-    }
-
-
-    */
 
 
     public PostDto[] posts { get; set; }
 
     public PostDto currentPost = new PostDto();
 
-    IFileListEntry file;
-
+    // Sollte requestet werden von DB Temp var
     public int currentuserId = 12;
-
-
 
     protected override async Task OnInitializedAsync()
     {
@@ -132,7 +100,7 @@
         posts = ps.Where(post => post.UserId == currentuserId).ToArray();
     }
 
-    private void AddNew()
+    private  void AddNew()
     {
         currentPost = new PostDto();
     }
@@ -146,11 +114,11 @@
             currentPost.UploadDate = DateTime.Now;
             currentPost.PostId = PostDto.inkrementPostId++;
             await PostServiceAccess.Save(currentPost);
+            AddNew();
             GetAllMyPosts();
+
         }
     }
-
-
 
     protected override async Task OnParametersSetAsync()
     {
@@ -166,9 +134,12 @@
         posts = ps.Where(post => post.UserId == currentuserId).ToArray();
     }
 
-
-
-
+    private async void DeletePost(int postId)
+    {
+        PostServiceAccess.DeletePost(postId);
+        var ps = await PostServiceAccess.GetAllPosts();
+        posts = ps.Where(post => post.UserId == currentuserId).ToArray();
+    }
 
 }
 
