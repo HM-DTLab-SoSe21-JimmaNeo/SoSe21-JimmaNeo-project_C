@@ -1,0 +1,145 @@
+﻿@page "/TestQuizSolveZwei/{QuizId:int}"
+
+@inject Services.QuizDefinitionBackendAccessService QuizDefinitionService
+
+@inject IJSRuntime JSRuntime
+
+<h3>Quiz Definitions Editor</h3>
+
+@if (TestQuizModel != null)
+{
+
+    <EditForm EditContext="@context" OnSubmit="OnSubmit">
+        <ObjectGraphDataAnnotationsValidator />
+
+        <label>Quiz Name</label>
+
+        @foreach (var question in TestQuizModel.QuizDefinitionDto.Questions)
+        {
+            <div>@question.QuestionText</div>
+
+            <ul>
+                @foreach (var answer in question.Answers)
+                {
+                    <li>
+                        <label>
+                            <InputCheckbox @bind-Value="TestQuizModel.Answers[answer].SelectedAnswer" />
+                            @(answer.AnswerText)
+                        </label>
+                    </li>
+                }
+            </ul>
+        }
+        <p>Right: @correctAnswers</p>
+        <p>False: @falseAnswers</p>
+        <p>counterAuswerten: @counter</p>
+        <button class="btn btn-light btn-sm" @onclick="Auswerten">Auswerten</button>
+        <ValidationSummary />
+    </EditForm>
+
+
+}
+else
+{
+    <h5>Quiz definition in loading (or not found) ...</h5>
+}
+
+@code {
+    int counterTest = 0;
+
+    [Parameter]
+    public int QuizId { get; set; }
+
+    public TestQuizDto TestQuizModel { get; set; }
+
+    private EditContext context { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        TestQuizDto model;
+        var existingQuiz = await QuizDefinitionService.GetQuizById(QuizId);
+        model = PrepareEditOrAddOfTestQuizDto(existingQuiz);
+
+        this.TestQuizModel = model;
+        context = new EditContext(this.TestQuizModel);
+
+        await base.OnParametersSetAsync();
+    }
+
+    private TestQuizDto PrepareEditOrAddOfTestQuizDto(QuizDefinitionDto q)
+    {
+        if (q.Questions == null) q.Questions = Array.Empty<QuestionDefinitionDto>();
+
+        TestQuizDto testQuizDto = new TestQuizDto();
+        testQuizDto.QuizDefinitionDto = q;
+        testQuizDto.Answers = new Dictionary<AnswerDefinitionDto, ConcreteAnswerDto>();
+        foreach (var question in q.Questions)
+            foreach (var a in question.Answers)
+                testQuizDto.Answers[a] = new ConcreteAnswerDto() { ReferencesTo = a, SelectedAnswer = false };
+
+        return testQuizDto;
+    }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+
+    public class TestQuizDto
+    {
+        public QuizDefinitionDto QuizDefinitionDto { get; set; }
+        public Dictionary<AnswerDefinitionDto, ConcreteAnswerDto> Answers { get; set; }
+    }
+
+
+    private void OnSubmit(EditContext context)
+    {
+
+    }
+
+    [Parameter]
+    public List<ConcreteAnswerDto> Answers { get; set; } = new List<ConcreteAnswerDto>();
+
+    int correctAnswers = 0;
+    int falseAnswers = 0;
+    int counter = 0;
+
+    async void Auswerten()
+    {
+        correctAnswers = TestQuizModel.Answers
+            .Where(kvp => kvp.Key.IsCorrectAnswer == kvp.Value.SelectedAnswer)
+            .Count();
+
+        falseAnswers = TestQuizModel.Answers
+            .Where(kvp => kvp.Key.IsCorrectAnswer && kvp.Value.SelectedAnswer == false)
+            .Count();
+
+
+       // bool test = await JSRuntime.InvokeAsync<bool>("confirm", $"Are you sure you?");
+        //correctAnswers = 0;
+        //falseAnswers = 0;
+        //counter = 0;
+        //foreach (var question in QuizDefinitionDto.Questions) {
+        //    foreach (var answer in question.Answers) {
+        //        ConcreteAnswerDto concrete = new ConcreteAnswerDto();
+        //        concrete.ReferencesTo = answer;
+
+
+        //        if (concrete.SelectedAnswer == true && answer.IsCorrectAnswer == true) {
+        //            correctAnswers++;
+        //            counter++;
+        //        }
+        //        else if (concrete.SelectedAnswer == false && answer.IsCorrectAnswer == false) {
+        //            correctAnswers++;
+        //            counter++;
+        //        }
+        //        else {
+        //            falseAnswers++;
+        //            counter++;
+        //        }
+        //    }
+        //}
+    }
+}
+
+
+
