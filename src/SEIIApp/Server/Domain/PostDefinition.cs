@@ -29,6 +29,7 @@ namespace SEIIApp.Server.Domain
         public byte[] Attachment { get; set; }
         public int Likes { get; set; }
         public int CommentCounter { get; set; }
+        //public List<CommentDefinition> Comments { get; set; } = new List<CommentDefinition>();
 
         public String UrlLink { get; set; }
         //public List<String> Links { get; set; }

@@ -16,6 +16,6 @@ namespace SEIIApp.Shared
 
         public int Percentage { get; set; }
 
-        public List<QuestionDto> Questions { get; set; }
+        public List<QuestionDto> Questions { get; set; } = new List<QuestionDto>();
     }
 }

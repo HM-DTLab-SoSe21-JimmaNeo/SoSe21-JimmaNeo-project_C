@@ -39,15 +39,27 @@ namespace SEIIApp.Server.Services
             //FirstOrDefault liefert das erste gefundene Objekt oder null zurück
         }
 
-        public ModulDefinition Save(ModulDefinition modul)
+        public ModulDefinition AddModul(ModulDefinition modul)
         {
             DatabaseContext.ModulDefinition.Add(modul);
             DatabaseContext.SaveChanges();
             return modul;
         }
 
+        public ModulDefinition Update(ModulDefinition modul)
+        {
+            var existingModul = GetModulWithId(modul.ModulId);
+
+            Mapper.Map(modul, existingModul); //we can map into the same object type
+
+            DatabaseContext.ModulDefinition.Update(existingModul);
+            DatabaseContext.SaveChanges();
+            return existingModul;
+        }
+
         public ModulDefinition UploadVideo(int ModulId, VideoDefinition video)
         {
+            DatabaseContext.VideoDefinition.Add(video);
             DatabaseContext.ModulDefinition.SingleOrDefault(x => x.ModulId == ModulId).Videos.Add(video);
             DatabaseContext.SaveChanges();
             return DatabaseContext.ModulDefinition.SingleOrDefault(x => x.ModulId == ModulId);

@@ -14,6 +14,6 @@ namespace SEIIApp.Shared
 
         public bool IsCorrect { get; set; }
 
-        public List<AnswerOptionDto> AnswerOptions { get; set; }
+        public List<AnswerOptionDto> AnswerOptions { get; set; } = new List<AnswerOptionDto>();
     }
 }
