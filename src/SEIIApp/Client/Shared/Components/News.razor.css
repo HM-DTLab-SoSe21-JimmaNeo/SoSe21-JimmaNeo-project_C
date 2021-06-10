@@ -1,13 +1,13 @@
 .news_wrapper {
     display: inline-flex;
-    margin-right: 120px;
-    margin-left: 120px;
+    margin-right: 300px;
+    margin-left: 250px;
 }
 
 .news_thumbnail {
     flex: 2;
-    width: 512px;
-    height: 288px;
+    width: 400px;
+    height: 350px;
     color: #1b1e21;
 }
 
