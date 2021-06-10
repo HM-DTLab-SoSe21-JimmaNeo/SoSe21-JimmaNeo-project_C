@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Include="wwwroot\Images\Logo.png" />
+    <None Include="wwwroot\Images\LogoTest.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BlazorInputFile" Version="0.2.0" />
