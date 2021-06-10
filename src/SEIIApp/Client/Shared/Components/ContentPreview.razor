@@ -1,7 +1,8 @@
 @using SEIIApp.Shared.ContentDto
+@inject NavigationManager NavigationManager
 
 <div>
-<button @onclick="ToPost" class="previewFountain">
+<button @onclick="ToModule" class="previewFountain">
     <div class="thumbnail"></div>
     <div class="title">
         @Content.Title
@@ -13,8 +14,8 @@
     [Parameter]
     public Content Content { get; set; }
 
-    private void ToPost()
+    private void ToModule()
     {
-        //TODO add link to post page
+        NavigationManager.NavigateTo("/course");
     }
 }
