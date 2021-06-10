@@ -11,6 +11,8 @@ namespace SEIIApp.Server.Domain
         [Key]
         public int ModulId { get; set; }
 
+        public string Title { get; set; }
+
         public List<EssayDefinition> Essays { get; set; }
 
         public List<VideoDefinition> Videos { get; set; }
