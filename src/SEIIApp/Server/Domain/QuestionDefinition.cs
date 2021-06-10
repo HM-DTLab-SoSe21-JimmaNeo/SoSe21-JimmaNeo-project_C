@@ -15,6 +15,7 @@ namespace SEIIApp.Server.Domain
 
         public bool IsCorrect { get; set; }
 
-        public List<AnswerOptionDefinition> AnswerOptions { get; set; }
+        public List<AnswerOption> AnswerOptions { get; set; }
+        public List<AnswerOptionDefinition> AnswerOptions { get; set; } = new List<AnswerOptionDefinition>();
     }
 }
