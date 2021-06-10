@@ -7,7 +7,7 @@ namespace SEIIApp.Shared.ContentDto
     {
         public int ContentId { get; set; }
         public int UserId { get; set; }
-        public UserDto.UserDto User { get; set; }
+        public UserDto User { get; set; }
         public bool IsAuthorized { get; set; }
         public string Title { get; set; }
         public DateTime UploadDate { get; set; }

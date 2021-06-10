@@ -19,5 +19,6 @@ namespace SEIIApp.Server.Domain
 
 
 
+        public List<AnswerOptionDefinition> AnswerOptions { get; set; } = new List<AnswerOptionDefinition>();
     }
 }

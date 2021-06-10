@@ -5,7 +5,7 @@
     {
         for (var i = 0; i < RowCount * 3; i++)
         {
-            <PostPreview Post="_contents[i]"></PostPreview>
+            <ContentPreview Content="_contents[i]"/>
         }
     }
 </div>
@@ -17,8 +17,8 @@
     
     private Content[] _contents = new Content[] {
         new Paper("Der OP"), 
-        new Video("Neonatologie"), 
-        new Video("Diagnose"),
+        new Paper("Neonatologie"), 
+        new Paper("Diagnose"),
         new Paper("Test 1"),
         new Paper("Test 2"),
         new Paper("Test 3"),

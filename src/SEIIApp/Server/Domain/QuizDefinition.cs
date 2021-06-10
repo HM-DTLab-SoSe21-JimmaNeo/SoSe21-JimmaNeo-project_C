@@ -17,5 +17,6 @@ namespace SEIIApp.Server.Domain
 
         public List<QuestionDefinition> Questions { get; set; }
 
+        public List<QuestionDefinition> Questions { get; set; }
     }
 }

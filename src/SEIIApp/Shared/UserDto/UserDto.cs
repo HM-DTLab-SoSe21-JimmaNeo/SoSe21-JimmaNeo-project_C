@@ -1,4 +1,4 @@
-namespace SEIIApp.Shared.UserDto
+namespace SEIIApp.Shared
 {
     public class UserDto
     {
