@@ -13,11 +13,11 @@ namespace SEIIApp.Server.Domain
 
         public string Title { get; set; }
 
-        public List<EssayDefinition> Essays { get; set; }
+        public List<EssayDefinition> Essays { get; set; } = new List<EssayDefinition>();
 
-        public List<VideoDefinition> Videos { get; set; }
+        public List<VideoDefinition> Videos { get; set; } = new List<VideoDefinition>();
 
-        public List<QuizDefinition> Quizes { get; set; }
+        public List<QuizDefinition> Quizes { get; set; } = new List<QuizDefinition>();
 
     }
 }

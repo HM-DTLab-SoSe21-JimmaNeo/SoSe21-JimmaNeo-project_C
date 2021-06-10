@@ -96,7 +96,7 @@ namespace SEIIApp.Server.Controllers
         }
 
         
-        [Route("api/ModulDefinition/video")]
+        [Route("video")]
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -106,8 +106,8 @@ namespace SEIIApp.Server.Controllers
             if (ModelState.IsValid)
             {
                 var mappedModel = Mapper.Map<ModulDefinition>(modul);
-                int insertPosition = modul.Videos.Count - 1;
-                ModulDefinitonService.UploadVideo(mappedModel.ModulId, mappedModel.Videos[insertPosition]);
+                //int insertPosition = modul.Videos.Count - 1;
+                ModulDefinitonService.UploadVideo(mappedModel.ModulId, mappedModel.Videos[0]);
                 var model = Mapper.Map<ModulDto>(mappedModel);
                 return Ok(model);
             }

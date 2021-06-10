@@ -12,10 +12,9 @@ namespace SEIIApp.Shared
 
         public string Title { get; set; }
 
-        public List<EssayDto> Essays { get; set; }
+        public List<EssayDto> Essays { get; set; } = new List<EssayDto>();
 
-        public List<VideoDto> Videos { get; set; }
-
-        public List<QuizDto> Quizes { get; set; }
+        public List<VideoDto> Videos { get; set; } = new List<VideoDto>();
+        public List<QuizDto> Quizes { get; set; } = new List<QuizDto>();
     }
 }
