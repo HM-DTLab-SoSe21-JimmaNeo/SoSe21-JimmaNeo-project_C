@@ -2,8 +2,8 @@
 @using SEIIApp.Shared
 @inject NavigationManager NavigationManager
 @inject SEIIApp.Client.Services.PostServiceAccess PostServiceAccess
-    <style>
 
+    <style>
         #navigation a {
             padding: 8px;
         }
@@ -72,7 +72,6 @@
         </select>
     </div>
 
-
     @code {
             HashSet<String> Categories = new HashSet<String>();
 
@@ -105,6 +104,7 @@
             NavigationManager.NavigateTo($"/post/activpost/{selectedString}");
         }
 
-    }
+
+}
 
 

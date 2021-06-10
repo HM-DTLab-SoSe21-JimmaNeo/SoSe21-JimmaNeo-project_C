@@ -26,8 +26,10 @@ namespace SEIIApp.Shared
         public string Comment { get; set; }
         public string Category { get; set; }
 
-        //public UrlAttribute Link { get; set; }
+        public String UrlLink { get; set; }
 
+  
+        
       
 
     }

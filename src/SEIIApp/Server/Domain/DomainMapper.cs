@@ -20,6 +20,12 @@ namespace SEIIApp.Server.Domain
             CreateMap<PostDefinition, PostDefinition>();
 
 
+            /*CreateMap<PostDefinition, PostDto>()
+                .ForMember(postDto => postDto.Links, opt => opt.MapFrom(obj => obj.Links.ToArray()));
+            CreateMap<PostDto, PostDefinition>()
+                .ForMember(postObj => postObj.Links, opt => opt.MapFrom(obj => obj.Links.ToList()));
+            */
+
             // Create ModulDto
             CreateMap<ModulDto, ModulDefinition>();
             CreateMap<ModulDefinition, ModulDto>();

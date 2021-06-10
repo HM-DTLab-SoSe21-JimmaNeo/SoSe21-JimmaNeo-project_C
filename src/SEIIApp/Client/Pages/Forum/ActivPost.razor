@@ -1,6 +1,6 @@
 ﻿@page "/post/activpost"
 @page "/post/activpost/{Category}"
-@page "/post/activpost/top5/{postId}"
+
 
 @inject NavigationManager NavigationManager
 @inject SEIIApp.Client.Services.PostServiceAccess PostServiceAccess
@@ -10,6 +10,7 @@
     <a href="ForumMainPage">Forum</a>
     <a href="post">Posts</a>
     <a href="TopFive">Top5</a>
+    <a href="Upload">Top5</a>
 </div>
 
 <h1>@Category</h1>
@@ -31,37 +32,27 @@
                         <h1>@post.Title</h1>
                     </div>
                     <div class="card-body text-center">
-                        <img class="card-img-top" src="@post.Attachment" />
-                        <h4>Likes: @post.Likes</h4>
-                        <h4>Upload Date : @post.UploadDate</h4>
+                        <a type="text">@post.Content</a>
                     </div>
                     <div class="card-footer text-center">
+                        <a>Upload Date: @post.UploadDate</a>
+                        <a>Comments: @post.CommentCounter</a>
                         <a>Likes: @post.Likes</a>
                         <button @onclick="@(e => incrementLike(@post))">Like</button>
+
+                        <div id="navigation">
+                            <a href="/post/viewPost/@post.PostId">View Post</a>
+                        </div>
+
                     </div>
 
                 </div>
             </div>
-
-        </div>
+        </div>  
     }
 }
 
-
 @code {
-
-    /*
-    Die MEthoden rufen den Injecteten CLient.Service.PostServiceAcess auf
-    PostService Access ruft den Controller mit der Route api/postdefinition auf
-    // Forum COntroller nimmt dann den Services Forum Services her um mit der DB zu Kommunizieren
-    // in der Server.STartup wurde der Service ForumServices Scoped hinzugefügt //
-    // in der Client.Programm wurde der Services Hinzugefügt
-
-    // erweiterungen Nuget Automapper Für das mappen von DTO Objecten zu Definition Objecten
-      // das mappen findet im Forum Controller statt -> von dem Client bekommt er eine DTo Objekt und vom Server ein Definition Objekt
-
-    */
-
 
 
     [Parameter]

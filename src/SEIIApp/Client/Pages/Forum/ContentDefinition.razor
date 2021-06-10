@@ -1,0 +1,78 @@
+﻿@page "/ContentDefinition"
+@page "/ContentDefinition/{PostId:int}"
+
+@using SEIIApp.Shared
+@inject SEIIApp.Client.Services.PostServiceAccess PostServiceAccess
+
+<h3>ContentDefinition</h3>
+<style>
+    textarea #content {
+        width: 70%;
+        box-sizing: border-box;
+        display: block;
+        max-width: 80%;
+        line-height: 1.5;
+        padding: 15px 15px 30px;
+        border-radius: 3px;
+        border: 1px solid #F7E98D;
+        font: 13px Tahoma, cursive;
+        transition: box-shadow 0.5s ease;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+</style>
+
+
+@if (activPost == null)
+{
+    <p>loading</p>
+}
+else
+{
+    
+        <a>create Content for Your Post </a>
+
+        <div>
+            <textarea id="content" onload="this.width=screen.width*0.7;this.height=screen.height*0.7;" @bind="currentContent" @bind:event="oninput" /> 
+        </div>
+
+        <div>
+            <h2> add link or Pdf Url</h2>
+            <input type="text" @bind="currentLink" @bind:event="oninput">
+        </div>
+
+        <div>
+            <button class="btn btn-secondary" @onclick="@(e => Update())">Save</button>
+        </div>
+   
+    }
+
+
+
+@code {
+    [Parameter]
+    public int PostId { get; set; }
+
+    public PostDto activPost { get; set; }
+
+    public String currentLink { get; set; }
+
+    public String currentContent { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        activPost = await PostServiceAccess.GetPostsWithId(PostId);
+        currentContent = activPost.Content;
+        currentLink = activPost.UrlLink;
+    }
+
+    private async void Update()
+    {
+        activPost.Content = currentContent;
+        activPost.UrlLink = currentLink;
+        await PostServiceAccess.Save(activPost);
+    }
+}
+
+

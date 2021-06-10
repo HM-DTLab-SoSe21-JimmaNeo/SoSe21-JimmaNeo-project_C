@@ -1,0 +1,62 @@
+﻿@page "/post/viewPost/{PostId:int}"
+
+@inject NavigationManager NavigationManager
+@inject SEIIApp.Client.Services.PostServiceAccess PostServiceAccess
+@using SEIIApp.Shared;
+
+<div id="navigation">
+    <a href="ForumMainPage">Forum</a>
+    <a href="post">Posts</a>
+    <a href="TopFive">Top5</a>
+    <a href="Upload">Top5</a>
+</div>
+
+
+<h1>Currrent View of the Post </h1>
+
+@if (activPost == null)
+{
+    <p>loading</p>
+}
+else
+{<div>
+    <div>
+        <h1>@activPost.Title</h1>
+        <p>@activPost.Category</p>
+    </div>
+    
+    <div>
+        <iframe src=@activPost.UrlLink onload="this.width=screen.width * 0.7;this.height=screen.height*0.7;" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <h2>Content</h2>
+    <div>
+        <output typeof="text"> @activPost.Content</output>
+    </div>
+</div>
+}
+
+@code {
+
+    public PostDto activPost { get; set; }
+
+    [Parameter]
+    public int PostId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        activPost = await PostServiceAccess.GetPostsWithId(PostId);
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        activPost = await PostServiceAccess.GetPostsWithId(PostId);
+
+    }
+
+
+
+
+
+}
