@@ -8,17 +8,14 @@ namespace SEIIApp.Server.Domain
 {
     public class QuestionDefinition
     {
-
-
         [Key]
-        public int Id { get; set; }
+        public int QuestionId { get; set; }
 
-        public string QuestionText { get; set; }
+        public string Question { get; set; }
 
-        public List<AnswerDefinition> Answers { get; set; }
+        public bool IsCorrect { get; set; }
 
-
-
+        public List<AnswerOption> AnswerOptions { get; set; }
         public List<AnswerOptionDefinition> AnswerOptions { get; set; } = new List<AnswerOptionDefinition>();
     }
 }

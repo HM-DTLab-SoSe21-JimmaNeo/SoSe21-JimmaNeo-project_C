@@ -44,7 +44,7 @@ namespace SEIIApp.Server {
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, Services.ForumService forumService) {
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
-              //  app.UseWebAssemblyDebugging();
+                app.UseWebAssemblyDebugging();
             }
             else {
                 app.UseExceptionHandler("/Error");
@@ -53,7 +53,7 @@ namespace SEIIApp.Server {
             }
 
             app.UseHttpsRedirection();
-          //  app.UseBlazorFrameworkFiles();
+            app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
 
             app.UseRouting();
