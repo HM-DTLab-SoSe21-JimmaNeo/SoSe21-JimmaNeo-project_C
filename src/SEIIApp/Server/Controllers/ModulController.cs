@@ -5,6 +5,8 @@ using SEIIApp.Server.Domain;
 using SEIIApp.Server.Services;
 using SEIIApp.Shared;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SEIIApp.Server.Controllers
 {
@@ -50,6 +52,7 @@ namespace SEIIApp.Server.Controllers
             return Ok(mappedModul);
         }
 
+        /*
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -64,11 +67,53 @@ namespace SEIIApp.Server.Controllers
                 return Ok(model);
             }
             return BadRequest(ModelState);
+        }*/
+
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult<ModulDto> InsertOrUpdateModul([FromBody] ModulDto modul)
+        {
+            if (ModelState.IsValid)
+            {
+                var mappedModel = Mapper.Map<ModulDefinition>(modul);
+                ModulDefinition[] moduls = ModulDefinitonService.GetAllModuls();
+                if (moduls.Any(p => p.ModulId == mappedModel.ModulId))
+                {
+                    ModulDefinitonService.Update(mappedModel);
+
+                }
+                else
+                {
+                    mappedModel = ModulDefinitonService.AddModul(mappedModel);
+                }
+                var model = Mapper.Map<ModulDto>(mappedModel);
+                return Ok(model);
+            }
+            return BadRequest(ModelState);
+
         }
 
-
-
-
+        
+        [Route("video")]
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult<ModulDto> AddVideo([FromBody] ModulDto modul)
+        {
+            if (ModelState.IsValid)
+            {
+                var mappedModel = Mapper.Map<ModulDefinition>(modul);
+                //int insertPosition = modul.Videos.Count - 1;
+                ModulDefinitonService.UploadVideo(mappedModel.ModulId, mappedModel.Videos[0]);
+                var model = Mapper.Map<ModulDto>(mappedModel);
+                return Ok(model);
+            }
+            return BadRequest(ModelState);
+        }
+       
 
     }
 }

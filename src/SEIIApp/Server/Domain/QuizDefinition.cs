@@ -17,6 +17,6 @@ namespace SEIIApp.Server.Domain
 
         public int Percentage { get; set; }
 
-        public List<QuestionDefinition> Questions { get; set; }
+        public List<QuestionDefinition> Questions { get; set; } = new List<QuestionDefinition>();
     }
 }
