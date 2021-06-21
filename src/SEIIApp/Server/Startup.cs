@@ -33,9 +33,20 @@ namespace SEIIApp.Server {
             });
 
             // Hier Services Anlegen 
+            // Forum Service
             services.AddScoped<Services.ForumService>();
             // Modul Service 
             services.AddScoped<Services.ModulService>();
+
+            // Video Service
+            services.AddScoped<Services.VideoService>();
+
+            // Essay Service
+            services.AddScoped<Services.EssayService>();
+
+            // QuizService
+            services.AddScoped<Services.QuizService>();
+
             // Services Mapper
             services.AddAutoMapper(typeof(Domain.DomainMapper));
         }

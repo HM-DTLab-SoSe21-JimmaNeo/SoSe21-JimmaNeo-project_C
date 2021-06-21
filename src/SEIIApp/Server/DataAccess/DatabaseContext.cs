@@ -30,7 +30,7 @@ namespace SEIIApp.Server.DataAccess
 
 
         //Hier legen wir eine Tabellen für die Quizze an.
-        public DbSet<Domain.QuizDefinition> QuizDefinitions { get; set; }
+        public DbSet<Domain.QuizDefinition> QuizDefinition { get; set; }
         //Wir legen, obwohl wir könnten, keine Tabellen für 
         //QuestionDefinitions and AnswerDefinitions an.
         //Diese Abhängigkeiten zu Quiz werden automatisch erkannt.
@@ -40,6 +40,8 @@ namespace SEIIApp.Server.DataAccess
         public DbSet<Domain.ModulDefinition> ModulDefinition { get; set; }
 
         public DbSet<Domain.VideoDefinition> VideoDefinition { get; set; }
+        public DbSet<Domain.EssayDefinition> EssayDefinition { get; set; }
+
 
     }
 }

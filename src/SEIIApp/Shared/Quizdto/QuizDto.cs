@@ -10,7 +10,7 @@ namespace SEIIApp.Shared
     {
         public int QuizId { get; set; }
 
-        public string QuizName { get; set; }
+        public string Title { get; set; }
 
         public int Score { get; set; }
 
