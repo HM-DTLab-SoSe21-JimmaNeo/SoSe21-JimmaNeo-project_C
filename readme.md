@@ -50,12 +50,13 @@ gahlmann.constantin0@hm.edu
 
 
 ## 5 Anlagen:
-
 - FaQ:
+[FAQ](https://gitlab.lrz.de/seii_sose_2021/project_c/-/blob/master/Dokumentation/LMU_TEAM_C_FAQ.pdf)
 
 
 - Storyboard:
+[Storyboard](https://gitlab.lrz.de/seii_sose_2021/project_c/-/blob/master/Dokumentation/Storyboard.jpeg)
 
 
 - PressRelease:
-
+[PressRelease](https://gitlab.lrz.de/seii_sose_2021/project_c/-/blob/master/Dokumentation/LMU_TEAM_C_PR.pdf)
