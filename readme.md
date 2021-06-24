@@ -2,7 +2,7 @@
 
 ## 1 Press Release:
 
-Vorstellung der neuen E-Learning Plattform „e-Neo“.
+Vorstellung der neuen E-Learning Plattform „e-Neo“:
 Die Kooperation der LMU und der Jimma University Specialized Hospital
 hat die die neue webbasierte Lernumgebung zur Fortbildung von
 medizinischem Personal im Bereich Neonatologie hervorgebracht.
@@ -45,12 +45,12 @@ Das voraussichtliche Erscheinungsdatum ist für den 25.06.2021 angesetzt.
 
 ## 3 SoftwareArchitektur:
 
-Die Softwarearchitecktur unserer eNeo Anwendung lässt sich grob in die drei Teile, 
+Die Softwarearchitecktur unserer "e-Neo" Anwendung lässt sich grob in die drei Teile, 
 Client (WebApp, Frontend), Server (Backend) & Shared unterteilen:
 
 Frontend, WebApp
 Das Frontend dient zur grafischen Darstellung und dient als Benutzerschnittstelle. 
-Oft wird es auch als Presentaionsschichtschicht bezeichnet. 
+Oft wird es auch als Präsentaionsschicht bezeichnet. 
 
 - Pages: Benutzerschnittstelle bestehend aus HTML, CSS, Razor- & C#-Blazor Code 
          (z. B. ForumMainPage.razor, Post.razor)
@@ -80,7 +80,7 @@ Front- zu Backend verwendet werden.
 In der Startup.cs werden diese durch einen Automapper dann in die Domains gemappt.
 
 
-- Uml:
+- [Architektur](Dokumentation/architecktur.pdf)
 
 ## 4 Ansprechpartner:
 
