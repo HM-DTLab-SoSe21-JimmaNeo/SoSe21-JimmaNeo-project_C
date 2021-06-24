@@ -4,6 +4,10 @@
 
 
 
+
+
+
+
 ## 2 Anwendungsbeschreibung:
 
 - Quiz:
@@ -14,12 +18,11 @@
 
 ## 3 SoftwareArchitektur:
 
-
 ## 4 Ansprechpartner:
+gahlmann.constantin0@hm.edu
 
 
 ## 5 Anlagen:
-
 
 - FaQ:
 
