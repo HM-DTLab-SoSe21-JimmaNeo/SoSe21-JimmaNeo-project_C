@@ -2,7 +2,7 @@
 
 ## 1 Press Release:
 
-- [PressRelease](https://gitlab.lrz.de/seii_sose_2021/project_c/-/blob/master/Dokumentation/LMU_TEAM_C_PR.pdf)
+- [Press Release](https://gitlab.lrz.de/seii_sose_2021/project_c/-/blob/master/Dokumentation/LMU_TEAM_C_PR.pdf)
 
 ## 2 Anwendungsbeschreibung:
 
