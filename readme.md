@@ -48,7 +48,11 @@ Das voraussichtliche Erscheinungsdatum ist für den 25.06.2021 angesetzt.
 
 ## 3 SoftwareArchitektur:
 
+
+- Uml
+
 ## 4 Ansprechpartner:
+
 gahlmann.constantin0@hm.edu
 
 
