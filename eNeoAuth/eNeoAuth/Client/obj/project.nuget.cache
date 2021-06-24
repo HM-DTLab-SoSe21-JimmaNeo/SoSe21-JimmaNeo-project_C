@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kHWOy7UBEeZRo2MZ8hy5kG9MCinNxHhMqbpLbB4W5SqahSliRiXVNSb85HgnOLp52D/NmidiPjkyEq7B4YSVzw==",
+  "dgSpecHash": "AfSqzOWwgtn4cmYBpQK69M33TBiOIkUhMhHssx5XVorwGbI/Js9dzdVcHwoIbh3o6OZMb46jjFgvi+jIpasnWg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Daniel\\source\\repos\\eNeoAuth\\eNeoAuth\\Client\\eNeoAuth.Client.csproj",
+  "projectFilePath": "C:\\Users\\Daniel\\Documents\\Studium\\4. Semester\\Software Engineering II\\project_c\\eNeoAuth\\eNeoAuth\\Client\\eNeoAuth.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Daniel\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.5\\microsoft.aspnetcore.authorization.5.0.5.nupkg.sha512",
     "C:\\Users\\Daniel\\.nuget\\packages\\microsoft.aspnetcore.components\\5.0.5\\microsoft.aspnetcore.components.5.0.5.nupkg.sha512",

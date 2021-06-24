@@ -1,0 +1,63 @@
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+
+@inject NavigationManager Navigation
+@inject SignOutSessionStateManager SignOutManager
+
+<div class="topNav">
+    <img id="logoDark" src="Images/LogoTest.png">
+    <div class="searchbarContainer">
+        <input class="searchbar" type="search" placeholder="Search..">
+    </div>
+    <AuthorizeView>
+        <Authorized>
+            <div class="btn-group dropleft" style="float:right">
+
+                <button class="btn btn-secondary" type="button" id="menuOne" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin:0; padding:0; width: 60px; height:60px;">
+                    <img id="accountCircle" type="image" src="Images/eNeoProfilPic.png" style="display: block; margin:0; width: 100%; height:100%; padding:0">
+                </button>
+                <div class="dropdown-menu" aria-labelledby="menuOne" style="background-color:#d90c0c; color:#ffffff">
+                    
+                    <button class="dropdown-item" type="button" @onclick="BeginSignOut">
+                        logout
+                    </button>
+
+                    </div>
+                </div>
+</Authorized>
+        <NotAuthorized>
+            <img class="rounded" style="object-fit: cover; cursor:pointer" id="accountCircle" type="image" src="Images/account_circle.svg" @onclick="signIn">
+        </NotAuthorized>
+    </AuthorizeView>
+    <div class="topNavLinks">
+        <a class="active" href="/">Home</a>
+        <a>Library</a>
+        <a href="/ForumMainPage">Forum</a>
+        <a>Quizes</a>
+    </div>
+</div>
+
+
+@code{ private async Task BeginSignOut(MouseEventArgs args)
+    {
+        await SignOutManager.SetSignOutState();
+        Navigation.NavigateTo("authentication/logout");
+
+
+    }
+
+    private void signIn()
+    {
+        Navigation.NavigateTo("/authentication/login");
+        }
+    }
+
+<style>
+    .dropdown-item{
+        color:white
+    }
+
+        .dropdown-item:focus, .dropdown-item:hover {
+            background-color: #ef2727; font-size:24px; color:white
+        }
+</style>

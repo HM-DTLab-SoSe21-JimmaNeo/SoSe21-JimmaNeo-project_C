@@ -198,13 +198,13 @@
       "mscorlib.dll": "sha256-aRw41w\/QxOqc3NzhbK7UKf1zT6z\/oHtp9BlXl4JWwjM=",
       "netstandard.dll": "sha256-stWPH7tpmfc4JFroiKGKWcPfLQ+ALD6yQUXA9NiV0fQ=",
       "System.Private.CoreLib.dll": "sha256-PbMTdb+kswRpFmuD8S4hY70nkZ9LeYJg7y3wm7hj0CQ=",
-      "eNeoAuth.Shared.dll": "sha256-CfAaGzggasE+CnwWvbM30d45Vo5bUSwIXVz7oeGScCs=",
-      "eNeoAuth.Client.dll": "sha256-aAEwnsSRmHsAxaJaUivrc38mEbRndiC1UREPFGcP0Qg="
+      "eNeoAuth.Shared.dll": "sha256-hM5KWNEiRS\/yOP2DkfOB3s224z5Ab0ZBbGnh5erSi1c=",
+      "eNeoAuth.Client.dll": "sha256-udC484ggnwf\/6eEb1hZzo1jwP+b\/ojN4h1P\/JK\/H65U="
     },
     "lazyAssembly": null,
     "pdb": {
-      "eNeoAuth.Shared.pdb": "sha256-VI4J77MulsPBXJa320hnpaTsa9xVb3Z97rq5mlnuIj4=",
-      "eNeoAuth.Client.pdb": "sha256-sfhltFjt8NvbmzOW+jZCFxTzKpKLkezaf1RMDfLuMNE="
+      "eNeoAuth.Shared.pdb": "sha256-iDDiHVamKeDEVCIFzMliDAXPYbERgbZwa4NmClqJpuY=",
+      "eNeoAuth.Client.pdb": "sha256-Lm8InHks7fPFym1y6a4HPEj9qQ+t+Ma9HTNsyJv62wQ="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-SQvzbzBfueaAxSKIKE1khBH02NH2MJJaWDBav\/S5MSs=",

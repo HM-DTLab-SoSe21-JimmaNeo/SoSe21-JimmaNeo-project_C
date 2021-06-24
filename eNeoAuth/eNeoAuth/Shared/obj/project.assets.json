@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Daniel\\source\\repos\\eNeoAuth\\eNeoAuth\\Shared\\eNeoAuth.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\Daniel\\Documents\\Studium\\4. Semester\\Software Engineering II\\project_c\\eNeoAuth\\eNeoAuth\\Shared\\eNeoAuth.Shared.csproj",
       "projectName": "eNeoAuth.Shared",
-      "projectPath": "C:\\Users\\Daniel\\source\\repos\\eNeoAuth\\eNeoAuth\\Shared\\eNeoAuth.Shared.csproj",
+      "projectPath": "C:\\Users\\Daniel\\Documents\\Studium\\4. Semester\\Software Engineering II\\project_c\\eNeoAuth\\eNeoAuth\\Shared\\eNeoAuth.Shared.csproj",
       "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Daniel\\source\\repos\\eNeoAuth\\eNeoAuth\\Shared\\obj\\",
+      "outputPath": "C:\\Users\\Daniel\\Documents\\Studium\\4. Semester\\Software Engineering II\\project_c\\eNeoAuth\\eNeoAuth\\Shared\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ToFJoeWyfS6TeaueDG/BMeL5J6CtkJQTuCpQjkponF0D48wNukO1yxfUzBZjobTWWkfAM1ENSDFozNVvcvODww==",
+  "dgSpecHash": "D3EfAllEtvAxpLbS9xp6zZPRGHwyQMH5WdpDypuPVi6JMholi/zTGBZ0QptEbuusJmajDtN2PBmO+E6MqbpHtQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Daniel\\source\\repos\\eNeoAuth\\eNeoAuth\\Server\\eNeoAuth.Server.csproj",
+  "projectFilePath": "C:\\Users\\Daniel\\Documents\\Studium\\4. Semester\\Software Engineering II\\project_c\\eNeoAuth\\eNeoAuth\\Server\\eNeoAuth.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Daniel\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\Daniel\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

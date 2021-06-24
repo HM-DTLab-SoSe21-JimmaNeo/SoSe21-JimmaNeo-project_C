@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Daniel\\source\\repos\\eNeoAuth\\eNeoAuth\\Client\\eNeoAuth.Client.csproj": {}
+    "C:\\Users\\Daniel\\Documents\\Studium\\4. Semester\\Software Engineering II\\project_c\\eNeoAuth\\eNeoAuth\\Client\\eNeoAuth.Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Daniel\\source\\repos\\eNeoAuth\\eNeoAuth\\Client\\eNeoAuth.Client.csproj": {
+    "C:\\Users\\Daniel\\Documents\\Studium\\4. Semester\\Software Engineering II\\project_c\\eNeoAuth\\eNeoAuth\\Client\\eNeoAuth.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Daniel\\source\\repos\\eNeoAuth\\eNeoAuth\\Client\\eNeoAuth.Client.csproj",
+        "projectUniqueName": "C:\\Users\\Daniel\\Documents\\Studium\\4. Semester\\Software Engineering II\\project_c\\eNeoAuth\\eNeoAuth\\Client\\eNeoAuth.Client.csproj",
         "projectName": "eNeoAuth.Client",
-        "projectPath": "C:\\Users\\Daniel\\source\\repos\\eNeoAuth\\eNeoAuth\\Client\\eNeoAuth.Client.csproj",
+        "projectPath": "C:\\Users\\Daniel\\Documents\\Studium\\4. Semester\\Software Engineering II\\project_c\\eNeoAuth\\eNeoAuth\\Client\\eNeoAuth.Client.csproj",
         "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Daniel\\source\\repos\\eNeoAuth\\eNeoAuth\\Client\\obj\\",
+        "outputPath": "C:\\Users\\Daniel\\Documents\\Studium\\4. Semester\\Software Engineering II\\project_c\\eNeoAuth\\eNeoAuth\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Daniel\\source\\repos\\eNeoAuth\\eNeoAuth\\Shared\\eNeoAuth.Shared.csproj": {
-                "projectPath": "C:\\Users\\Daniel\\source\\repos\\eNeoAuth\\eNeoAuth\\Shared\\eNeoAuth.Shared.csproj"
+              "C:\\Users\\Daniel\\Documents\\Studium\\4. Semester\\Software Engineering II\\project_c\\eNeoAuth\\eNeoAuth\\Shared\\eNeoAuth.Shared.csproj": {
+                "projectPath": "C:\\Users\\Daniel\\Documents\\Studium\\4. Semester\\Software Engineering II\\project_c\\eNeoAuth\\eNeoAuth\\Shared\\eNeoAuth.Shared.csproj"
               }
             }
           }
@@ -96,14 +96,14 @@
         }
       }
     },
-    "C:\\Users\\Daniel\\source\\repos\\eNeoAuth\\eNeoAuth\\Shared\\eNeoAuth.Shared.csproj": {
+    "C:\\Users\\Daniel\\Documents\\Studium\\4. Semester\\Software Engineering II\\project_c\\eNeoAuth\\eNeoAuth\\Shared\\eNeoAuth.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Daniel\\source\\repos\\eNeoAuth\\eNeoAuth\\Shared\\eNeoAuth.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Daniel\\Documents\\Studium\\4. Semester\\Software Engineering II\\project_c\\eNeoAuth\\eNeoAuth\\Shared\\eNeoAuth.Shared.csproj",
         "projectName": "eNeoAuth.Shared",
-        "projectPath": "C:\\Users\\Daniel\\source\\repos\\eNeoAuth\\eNeoAuth\\Shared\\eNeoAuth.Shared.csproj",
+        "projectPath": "C:\\Users\\Daniel\\Documents\\Studium\\4. Semester\\Software Engineering II\\project_c\\eNeoAuth\\eNeoAuth\\Shared\\eNeoAuth.Shared.csproj",
         "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Daniel\\source\\repos\\eNeoAuth\\eNeoAuth\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\Daniel\\Documents\\Studium\\4. Semester\\Software Engineering II\\project_c\\eNeoAuth\\eNeoAuth\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",

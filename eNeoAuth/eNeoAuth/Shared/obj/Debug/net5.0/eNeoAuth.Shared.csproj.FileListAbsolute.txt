@@ -10,3 +10,15 @@ C:\Users\Daniel\source\repos\eNeoAuth\eNeoAuth\Shared\obj\Debug\net5.0\eNeoAuth.
 C:\Users\Daniel\source\repos\eNeoAuth\eNeoAuth\Shared\obj\Debug\net5.0\eNeoAuth.Shared.dll
 C:\Users\Daniel\source\repos\eNeoAuth\eNeoAuth\Shared\obj\Debug\net5.0\ref\eNeoAuth.Shared.dll
 C:\Users\Daniel\source\repos\eNeoAuth\eNeoAuth\Shared\obj\Debug\net5.0\eNeoAuth.Shared.pdb
+C:\Users\Daniel\Documents\Studium\4. Semester\Software Engineering II\project_c\eNeoAuth\eNeoAuth\Shared\bin\Debug\net5.0\eNeoAuth.Shared.deps.json
+C:\Users\Daniel\Documents\Studium\4. Semester\Software Engineering II\project_c\eNeoAuth\eNeoAuth\Shared\bin\Debug\net5.0\eNeoAuth.Shared.dll
+C:\Users\Daniel\Documents\Studium\4. Semester\Software Engineering II\project_c\eNeoAuth\eNeoAuth\Shared\bin\Debug\net5.0\ref\eNeoAuth.Shared.dll
+C:\Users\Daniel\Documents\Studium\4. Semester\Software Engineering II\project_c\eNeoAuth\eNeoAuth\Shared\bin\Debug\net5.0\eNeoAuth.Shared.pdb
+C:\Users\Daniel\Documents\Studium\4. Semester\Software Engineering II\project_c\eNeoAuth\eNeoAuth\Shared\obj\Debug\net5.0\eNeoAuth.Shared.csprojAssemblyReference.cache
+C:\Users\Daniel\Documents\Studium\4. Semester\Software Engineering II\project_c\eNeoAuth\eNeoAuth\Shared\obj\Debug\net5.0\eNeoAuth.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Daniel\Documents\Studium\4. Semester\Software Engineering II\project_c\eNeoAuth\eNeoAuth\Shared\obj\Debug\net5.0\eNeoAuth.Shared.AssemblyInfoInputs.cache
+C:\Users\Daniel\Documents\Studium\4. Semester\Software Engineering II\project_c\eNeoAuth\eNeoAuth\Shared\obj\Debug\net5.0\eNeoAuth.Shared.AssemblyInfo.cs
+C:\Users\Daniel\Documents\Studium\4. Semester\Software Engineering II\project_c\eNeoAuth\eNeoAuth\Shared\obj\Debug\net5.0\eNeoAuth.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\Documents\Studium\4. Semester\Software Engineering II\project_c\eNeoAuth\eNeoAuth\Shared\obj\Debug\net5.0\eNeoAuth.Shared.dll
+C:\Users\Daniel\Documents\Studium\4. Semester\Software Engineering II\project_c\eNeoAuth\eNeoAuth\Shared\obj\Debug\net5.0\ref\eNeoAuth.Shared.dll
+C:\Users\Daniel\Documents\Studium\4. Semester\Software Engineering II\project_c\eNeoAuth\eNeoAuth\Shared\obj\Debug\net5.0\eNeoAuth.Shared.pdb

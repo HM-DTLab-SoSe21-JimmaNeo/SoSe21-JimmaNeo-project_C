@@ -1,7 +1,122 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
+<h2 style="margin-bottom: 80px; margin-top: 30px">News</h2>
+<div class="news_wrapper">
+    <button class="news_thumbnail"><img src="https://a9p9n2x2.stackpathcdn.com/wp-content/blogs.dir/1/files/2018/05/iStock-178164812-e1527175649314.jpg" style="object-fit:cover; width:100%; height:100% "  /></button>
+    <div class="news_panel">
+        <h4 style="margin-bottom: 10px">Lorem ipsum</h4>
+        <div>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+            sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+            et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+            no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </div>
+    </div>
+</div>
+<div style="margin-bottom: 120px"></div>
+<h2 style="margin-bottom: 30px; margin-top: 50px">Your List</h2>
+<div class="PostPreviewWrapper">
+  
+       
+    <div>
+        <button  class="previewFountain">
+            <div class="thumbnail"> <img src="Images/eNeoPlaceholder.png" style="object-fit:cover; width:256px; height:144px;"></div>
+            <div class="title">
+                Der OP
+            </div>
+        </button>
+    </div>
+            
+</div>
+<h2 style="margin-bottom: 30px; margin-top: 50px">Recomendations</h2>
+<div class="PostPreviewWrapper">
 
-Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    <div>
+        <button  class="previewFountain">
+            <div class="thumbnail"><img src="Images/eNeoPlaceholder.png" style="object-fit:cover; width:256px; height:144px;"></div>
+            <div class="title">
+                Der OP
+            </div>
+        </button>
+    </div>
+    <div>
+        <button  class="previewFountain">
+            <div class="thumbnail"><img src="https://images-eu.ssl-images-amazon.com/images/I/41sfLTy0q0L.png" style="object-fit:cover; width:256px; height:144px;"></div>
+            <div class="title">
+                Neonatologie
+            </div>
+        </button>
+    </div>
+    <div>
+        <button  class="previewFountain">
+            <div class="thumbnail"><img src="https://st3.depositphotos.com/1091429/14653/i/1600/depositphotos_146538029-stock-photo-stethoscope-and-medical-stuff-on.jpg" style="object-fit:cover; width:256px; height:144px;"></div>
+            <div class="title">
+                Diagnose
+            </div>
+        </button>
+    </div>
+
+</div>
+
+
+<style
+
+       >
+    .news_wrapper {
+        display: inline-flex;
+        margin-right: 300px;
+        margin-left: 250px;
+    }
+
+    .news_thumbnail {
+        flex: 2;
+        width: 400px;
+        height: 350px;
+        color: #1b1e21;
+    }
+
+    .news_panel {
+        flex: 1;
+        margin-left: 50px;
+    }
+    .thumbnail {
+        height: 144px;
+        width: 256px;
+        background-color: #555;
+    }
+
+    .previewFountain {
+        padding: 0;
+        border: none;
+        background: none;
+    }
+
+    .title {
+        alignment: left;
+    }
+    .PostPreviewWrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+    }
+
+    .arrow {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+    }
+
+    .right {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+
+    .left {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+    }
+</style>
