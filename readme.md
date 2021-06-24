@@ -1,7 +1,5 @@
 # E-Neo
-<p>
-<img src="(https://gitlab.lrz.de/seii_sose_2021/project_c/-/blob/master/logos.png" width="220" height="240" />
-</p>
+
 ## 1 Press Release:
 
 Vorstellung der neuen E-Learning Plattform „e-Neo“.
@@ -47,8 +45,7 @@ Das voraussichtliche Erscheinungsdatum ist für den 25.06.2021 angesetzt.
 
 ## 3 SoftwareArchitektur:
 
-
-- Uml
+- Uml:
 
 ## 4 Ansprechpartner:
 
@@ -57,8 +54,8 @@ gahlmann.constantin0@hm.edu
 
 ## 5 Anlagen:
 
-- Dokumentation
-[Dokumentation] https://gitlab.lrz.de/seii_sose_2021/project_c/-/tree/master/Dokumentation
+- Dokumentation https://gitlab.lrz.de/seii_sose_2021/project_c/-/tree/master/Dokumentation
+
 
 - FaQ:
 [FAQ](https://gitlab.lrz.de/seii_sose_2021/project_c/-/blob/master/Dokumentation/LMU_TEAM_C_FAQ.pdf)
