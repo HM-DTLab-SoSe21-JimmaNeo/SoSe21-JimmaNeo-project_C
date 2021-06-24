@@ -3,32 +3,33 @@
 Dieses Projekt ist ein Standard-Vorlageprojekt, das eine funktionierende WebAssembly-Anwendung, die auf .NET Core gehostet ist, zeigt. Die Beispiel-Anwendung enthält einen Zugriff auf APIs.
 
 
-- 1 Press Release:
+## 1 Press Release:
 
 
-- 2 Anwendungsbeschreibung:
+## 2 Anwendungsbeschreibung:
 
 
-Quiz:
+- Quiz:
 
-Forum:
+- Forum:
 
-Login
+- Login
 
-
-- 4 SoftwareArchitektur:
-
-
-- 5 Anlagen:
+## 3 SoftwareArchitektur:
 
 
-FaQ
+## 3 Ansprechpartner:
+
+## 5 Anlagen:
 
 
-Storyboard
+- FaQ
 
 
-PressRelease
+- Storyboard
+
+
+- PressRelease
 
 
 
