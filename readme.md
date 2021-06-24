@@ -51,7 +51,7 @@ In der Startup.cs werden diese durch einen Automapper dann in die Domains gemapp
 
 - [Architektur](Dokumentation/architecktur.pdf)
 
-## 4 Ansprechpartner:
+## 4 Team und Ansprechpartner:
 
 Das Team "e-Neo"(Gruppe C) besteht aus sieben Teammitgliedern:
 
