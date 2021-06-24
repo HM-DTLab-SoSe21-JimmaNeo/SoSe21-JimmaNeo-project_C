@@ -49,7 +49,7 @@ Das voraussichtliche Erscheinungsdatum ist für den 25.06.2021 angesetzt.
 
 ## 4 Ansprechpartner:
 
-Das Team e-Neo(Gruppe C) besteht aus sieben Teammitgliedern:
+Das Team "e-Neo"(Gruppe C) besteht aus sieben Teammitgliedern:
 
 Sahin, Emre |
 Gahlmann, Constantin |
@@ -60,6 +60,16 @@ Bublitz, Alina |
 Themann, Stefan |
 
 Ansprechpartner: emre.sahin@hm.edu
+
+Frontend:
+-> UploadForum (Emre und Constantin)
+-> Quiz (Alina und Stefan)
+-> Login (Daniel)
+
+Backend:
+-> (Leon und Kev)
+
+
 
 
 
