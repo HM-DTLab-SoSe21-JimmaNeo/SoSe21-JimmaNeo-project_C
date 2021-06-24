@@ -1,13 +1,10 @@
-# Vorlagenprojekt für ein Blazor WebAssembly Projekt das auf ASP.NET Core gehostet ist
-
-Dieses Projekt ist ein Standard-Vorlageprojekt, das eine funktionierende WebAssembly-Anwendung, die auf .NET Core gehostet ist, zeigt. Die Beispiel-Anwendung enthält einen Zugriff auf APIs.
-
+# E-Neo
 
 ## 1 Press Release:
 
 
-## 2 Anwendungsbeschreibung:
 
+## 2 Anwendungsbeschreibung:
 
 - Quiz:
 
@@ -18,19 +15,17 @@ Dieses Projekt ist ein Standard-Vorlageprojekt, das eine funktionierende WebAsse
 ## 3 SoftwareArchitektur:
 
 
-## 3 Ansprechpartner:
+## 4 Ansprechpartner:
+
 
 ## 5 Anlagen:
 
 
-- FaQ
+- FaQ:
 
 
-- Storyboard
+- Storyboard:
 
 
-- PressRelease
-
-
-
+- PressRelease:
 
