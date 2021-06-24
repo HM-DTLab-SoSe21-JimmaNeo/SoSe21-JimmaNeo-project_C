@@ -37,7 +37,7 @@ Das voraussichtliche Erscheinungsdatum ist für den 25.06.2021 angesetzt.
 
 ## 2 Anwendungsbeschreibung:
 
-- [Login Vorgang] (Dokumentation/Login_Ablauf.pdf)
+- [Login Vorgang](Dokumentation/Login_Ablauf.pdf)
 
 - Forum
 
