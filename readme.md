@@ -1,5 +1,7 @@
 # E-Neo
-https://gitlab.lrz.de/seii_sose_2021/project_c/-/blob/master/logos.png
+
+<img alt="Qries" src="https://gitlab.lrz.de/seii_sose_2021/project_c/-/blob/master/logos.png" width=150" height="70">
+
 ## 1 Press Release:
 
 Vorstellung der neuen E-Learning Plattform „e-Neo“.
