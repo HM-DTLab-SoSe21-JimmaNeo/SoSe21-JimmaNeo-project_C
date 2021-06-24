@@ -52,12 +52,12 @@ Das voraussichtliche Erscheinungsdatum ist für den 25.06.2021 angesetzt.
 Das Team e-Neo(Gruppe C) besteht aus sieben Teammitgliedern:
 
 Sahin, Emre ;
-Gahlmann, Constantin ;
-Ha, Kevin ;
-Forster, Leon ;
-Bronold, Daniel ;
-Bublitz, Alina ;
-Themann, Stefan ;
+Gahlmann, Constantin |
+Ha, Kevin |
+Forster, Leon |
+Bronold, Daniel |
+Bublitz, Alina |
+Themann, Stefan |
 
 Ansprechpartner: emre.sahin@hm.edu
 
