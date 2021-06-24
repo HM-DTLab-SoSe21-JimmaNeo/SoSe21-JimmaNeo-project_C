@@ -56,6 +56,10 @@ gahlmann.constantin0@hm.edu
 
 
 ## 5 Anlagen:
+
+- Dokumentation
+[Dokumentation] https://gitlab.lrz.de/seii_sose_2021/project_c/-/tree/master/Dokumentation
+
 - FaQ:
 [FAQ](https://gitlab.lrz.de/seii_sose_2021/project_c/-/blob/master/Dokumentation/LMU_TEAM_C_FAQ.pdf)
 
