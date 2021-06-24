@@ -50,7 +50,7 @@ Client (WebApp, Frontend), Server (Backend) & Shared unterteilen:
 
 Frontend, WebApp
 Das Frontend dient zur grafischen Darstellung und dient als Benutzerschnittstelle. 
-Oft wird es auch als Präsentaionsschicht bezeichnet. 
+Oft wird es auch als Präsentationsschicht bezeichnet. 
 
 - Pages: Benutzerschnittstelle bestehend aus HTML, CSS, Razor- & C#-Blazor Code 
          (z. B. ForumMainPage.razor, Post.razor)
