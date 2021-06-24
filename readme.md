@@ -67,7 +67,7 @@ Frontend:
 -> Login (Daniel)
 
 Backend:
--> (Leon und Kev)
+-> (Leon und Kevin)
 
 
 
