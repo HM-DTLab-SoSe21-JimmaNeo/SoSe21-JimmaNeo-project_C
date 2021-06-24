@@ -51,7 +51,7 @@ Das voraussichtliche Erscheinungsdatum ist für den 25.06.2021 angesetzt.
 
 Das Team e-Neo(Gruppe C) besteht aus sieben Teammitgliedern:
 
-Sahin, Emre ;
+Sahin, Emre |
 Gahlmann, Constantin |
 Ha, Kevin |
 Forster, Leon |
