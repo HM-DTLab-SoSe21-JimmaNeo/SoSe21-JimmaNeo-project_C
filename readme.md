@@ -12,6 +12,7 @@ Als Team möchten wir zuerst dem Herr Prof. Kofler ein grosses Dank aussprechen,
 - [Login Vorgang](Dokumentation/Login_Ablauf.pdf)
 
 - [Forum](Dokumentation/Forum_AblaufNeu.pdf)
+- [Motivation](Dokumentation/Motivation_Forum.png)
 
 - [Quiz](Dokumentation/Quiz_Ablauf.pdf)
 
