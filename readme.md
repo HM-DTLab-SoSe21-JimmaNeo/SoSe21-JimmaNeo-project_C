@@ -1,7 +1,7 @@
 # E-Neo
-Das Ziel von "E-Neo" ist es,dem medizinischen Personal in Äthiopien verschiedene Online Sesssions anzubieten, mithilfe einer Web Anwendung. Wichtig hier zu erwähnen, die Web Anwendung soll besonders benutzerfreundlich und klar auf den User zugeschnitten sein. Zusätzlich soll der Spaß Faktor nicht verloren gehen bei der Bedienung, hier zu kommt unser Feature, das Upload Forum zu Gute.
+Das Ziel von "E-Neo" ist es, dem medizinischen Personal in Äthiopien verschiedene Online Sesssions anzubieten, mithilfe einer Web Anwendung. Wichtig hier zu erwähnen, die Web Anwendung soll besonders benutzerfreundlich und klar auf den User zugeschnitten sein. Zusätzlich soll der Spaß Faktor nicht verloren gehen bei der Bedienung, hier zu kommt unser Feature, das Upload Forum zu Gute.
 
-Als Team möchten wir zuerst dem Herr Prof. Kofler ein grosses Dank aussprechen, welcher nicht nur uns das Vertrauen gegeben hat solch eine Art an Projekt durchführen zu können sondern auch rund um die Uhr zur Seite stand. Des Weiteren bedanken wir uns natürlich an die Auftraggeber Victoria Lieftüchter und Dr. Tobias Reicherzer für die Möglichkeit am Projekt teilnehemen zu können. Zuletzt auch ein Dank an Lars Schmitz, für dessen Anwesenheit und Mitwirken von AWS.
+Als Team möchten wir zuerst dem Herr Prof. Kofler ein großes Dank aussprechen, welcher nicht nur uns das Vertrauen gegeben hat solch eine Art von Projekt durchführen zu können sondern auch rund um die Uhr zur Seite stand. Des Weiteren bedanken wir uns natürlich an die Auftraggeber Victoria Lieftüchter und Dr. Tobias Reicherzer für die Möglichkeit am Projekt teilnehemen zu können. Zuletzt auch ein Dank an Lars Schmitz, für dessen Anwesenheit und Mitwirken von AWS.
 
 ## 1 Press Release:
 
