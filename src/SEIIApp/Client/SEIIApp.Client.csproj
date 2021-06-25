@@ -11,6 +11,7 @@
   <ItemGroup>
     <None Include="wwwroot\Images\Logo.png" />
     <None Include="wwwroot\Images\LogoTest.png" />
+    <None Include="wwwroot\Script.js" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AntDesign" Version="0.8.1" />
