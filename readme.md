@@ -69,7 +69,7 @@ Frontend:
 -> UploadForum (Emre und Constantin)
 -> Quiz (Alina und Stefan)
 -> Login (Daniel)
--> UI (Kevin)
+-> UI (Kevin und Emre)
 
 Backend:
 -> (Leon und Kevin)
