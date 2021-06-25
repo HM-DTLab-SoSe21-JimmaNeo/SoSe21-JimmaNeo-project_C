@@ -1,0 +1,28 @@
+﻿<h3>QuestionDefComponent</h3>
+
+@if (QuestionDefinitionDto != null)
+{
+    <div>@QuestionDefinitionDto.QuestionText</div>
+
+
+
+
+
+}
+
+
+@code {
+
+    [Parameter]
+    public QuestionDefinitionDto QuestionDefinitionDto { get; set; }
+
+        protected override async Task OnParametersSetAsync()
+        {
+            await base.OnParametersSetAsync();
+
+
+
+
+        }
+
+}

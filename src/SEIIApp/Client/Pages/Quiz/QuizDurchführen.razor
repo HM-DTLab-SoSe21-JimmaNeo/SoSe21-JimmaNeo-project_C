@@ -1,0 +1,37 @@
+﻿@page "/quizdurch"
+@inject Services.QuizDefinitionBackendAccessService QuizDefinitionService
+@inject NavigationManager NavigationManager
+
+<h3>Quiz Definitions Editor</h3>
+@{ if (Quizzes?.Length > 0)
+    {
+    <ol>
+        @foreach (var quiz in Quizzes)
+        {
+            <li>@(quiz.QuizName)</li>
+            <li>@(quiz.QuizName) <button class="btn btn-primary" @onclick="() => Solve(quiz)">Solve</button></li>
+        }
+    </ol>
+
+        
+    }
+    else
+    {
+        <h5>Loading ...  or no quizzes found.</h5>
+    }
+}
+@code {
+
+    public QuizDefinitionBaseDto[] Quizzes { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await base.OnParametersSetAsync();
+        Quizzes = await QuizDefinitionService.GetQuizOverview();
+    }
+
+    private void Solve(QuizDefinitionBaseDto quiz)
+    {
+        NavigationManager.NavigateTo("/TestQuizSolveZwei/" + quiz.Id);
+    }
+}

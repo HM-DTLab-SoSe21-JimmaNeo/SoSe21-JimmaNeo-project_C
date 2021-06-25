@@ -1,0 +1,145 @@
+﻿@page "/TestQuizSolveJoe/{QuizId:int}"
+@inject Services.QuizDefinitionBackendAccessService QuizDefinitionService
+
+<h3>Quiz Definitions Editor</h3>
+
+@if (TestQuizModel != null)
+{
+    <EditForm EditContext="@context" OnSubmit="OnSubmit">
+        <ObjectGraphDataAnnotationsValidator />
+
+        <label>@TestQuizModel.QuizDefinitionDto.QuizName</label>
+
+        @foreach (var question in TestQuizModel.QuizDefinitionDto.Questions)
+        {
+            <div>@question.QuestionText</div>
+            <div>
+                <table>
+                    @foreach (var answer in question.Answers)
+                    {
+                        <tr>
+                            @if (evaluationMode)
+                            {
+                                
+                                @if (model.Answers[answer].SelectedAnswer && answer.IsCorrectAnswer)
+                                {
+                                
+                                    <td style="color: green;">@(answer.AnswerText)</td>
+                                }
+                                else if (answer.IsCorrectAnswer || model.Answers[answer].SelectedAnswer)
+                                {
+                                
+                                    <td style="color: red;">@(answer.AnswerText)</td>
+                                }
+                                else
+                                {
+                                    <td>@(answer.AnswerText)</td>
+                                }
+                                <td><InputCheckbox @bind-Value="model.Answers[answer].SelectedAnswer" disabled /></td>
+                            }
+                            else
+                            {
+                                <td>@(answer.AnswerText)</td>
+                                <td><InputCheckbox @bind-Value="model.Answers[answer].SelectedAnswer" /></td>
+                            }
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+        <p>Correct: @correctAnswers</p>
+        <p>Wrong: @falseAnswers</p>
+        
+        <button class="btn btn-light btn-sm" @onclick="Auswerten">Auswerten</button>
+        
+        <button class="btn btn-light btn-sm" @onclick="Reset">Reset</button>
+        <ValidationSummary />
+    </EditForm>
+
+}
+else
+{
+    <h5>Quiz definition in loading (or not found) ...</h5>
+}
+
+@code {
+    private int counterTest = 0;
+    private TestQuizDto model;
+
+    [Parameter]
+    public int QuizId { get; set; }
+
+    public TestQuizDto TestQuizModel { get; set; }
+
+    private EditContext context { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var existingQuiz = await QuizDefinitionService.GetQuizById(QuizId);
+        model = PrepareEditOrAddOfTestQuizDto(existingQuiz);
+
+        this.TestQuizModel = model;
+        context = new EditContext(this.TestQuizModel);
+        await base.OnParametersSetAsync();
+
+
+
+    }
+
+    private TestQuizDto PrepareEditOrAddOfTestQuizDto(QuizDefinitionDto q)
+    {
+        if (q.Questions == null) q.Questions = Array.Empty<QuestionDefinitionDto>();
+
+        TestQuizDto testQuizDto = new TestQuizDto();
+        testQuizDto.QuizDefinitionDto = q;
+        testQuizDto.Answers = new Dictionary<AnswerDefinitionDto, ConcreteAnswerDto>();
+        foreach (var question in q.Questions)
+            foreach (var a in question.Answers)
+                testQuizDto.Answers[a] = new ConcreteAnswerDto() { ReferencesTo = a, SelectedAnswer = false };
+
+        return testQuizDto;
+    }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+
+    public class TestQuizDto
+    {
+        public QuizDefinitionDto QuizDefinitionDto { get; set; }
+        public Dictionary<AnswerDefinitionDto, ConcreteAnswerDto> Answers { get; set; }
+    }
+
+
+    private void OnSubmit(EditContext context)
+    {
+
+    }
+
+    [Parameter]
+    public List<ConcreteAnswerDto> Answers { get; set; } = new List<ConcreteAnswerDto>();
+
+    private int correctAnswers = 0;
+    private int falseAnswers = 0;
+    private bool evaluationMode = false;
+
+    private void Auswerten()
+    {
+        evaluationMode = true;
+        correctAnswers = TestQuizModel.Answers
+            .Where(kvp => kvp.Value.SelectedAnswer && kvp.Key.IsCorrectAnswer)
+            .Count();
+
+        falseAnswers = TestQuizModel.Answers
+            .Where(kvp => kvp.Value.SelectedAnswer != kvp.Key.IsCorrectAnswer)
+            .Count();
+    }
+
+    private void Reset()
+    {
+
+        evaluationMode = false;
+        correctAnswers = 0;
+        falseAnswers = 0;
+    }
+}
