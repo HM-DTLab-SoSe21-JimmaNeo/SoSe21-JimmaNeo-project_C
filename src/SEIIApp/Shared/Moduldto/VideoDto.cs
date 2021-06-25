@@ -7,5 +7,16 @@ namespace SEIIApp.Shared
         public string Title { get; set; }
 
         public string Link { get; set; }
+
+        public VideoDto(string title)
+        {
+            Title = title;
+        }
+
+        public VideoDto(string title, string link)
+        {
+            Title = title;
+            Link = link;
+        }
     }
 }

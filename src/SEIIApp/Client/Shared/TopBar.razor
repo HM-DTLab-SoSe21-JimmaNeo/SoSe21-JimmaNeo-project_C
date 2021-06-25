@@ -1,9 +1,10 @@
+@using System.Runtime.InteropServices
+@using SEIIApp.Shared.Moduldto
+@using Blazored.Typeahead
+@inject NavigationManager NavManager;
+
 <div class="topNav">
     <img id="logoDark" src="Images/LogoTest.png">
-    <div class="searchbarContainer">
-        <input class="searchbar" type="search" placeholder="Search..">
-    </div>
-    <input id="accountCircle" type="image" src="Images/account_circle.svg">
     <div class="topNavLinks">
         <a class="active" href="/">Home</a>
         <a>Library</a>
@@ -11,5 +12,11 @@
         <a href="/ForumMainPage">Forum</a>
         <a>Quizes</a>
         <a href="/About">About</a>
+        <a href="/Profile">Profile</a>
     </div>
 </div>
+
+@code
+{
+
+}

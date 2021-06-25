@@ -1,7 +1,19 @@
 ﻿@page "/"
 @using SEIIApp.Shared.ContentDto
 @using SEIIApp.Client.Shared.Components
+@using SEIIApp.Shared.Moduldto
+@using Blazored.Typeahead
 
+<div class="searchbarContainer" style="padding: 30px; height: auto; width: 400px ">
+    <BlazoredTypeahead SearchMethod="searchModule" @bind-Value="selectedModule">
+        <SelectedTemplate>
+            @context.Title
+        </SelectedTemplate>
+        <ResultTemplate>
+            @context.Title
+        </ResultTemplate>
+    </BlazoredTypeahead>
+</div>
 <h2 style="margin-bottom: 80px; margin-top: 30px">News</h2>
 <News Content="Paper"></News>
 <div style="margin-bottom: 120px"></div>
@@ -13,4 +25,28 @@
 @code{
     public ContentPreview ContentPreview = new ContentPreview();
     public Paper Paper = new Paper("Test");
+    
+    private List<ModulDto> modules = new List<ModulDto>()
+    {
+        new ModulDto("Der OP"),
+        new ModulDto("Neonatologie"),
+        new ModulDto("Diagnose"),
+        new ModulDto("Notaufnahme"),
+        new ModulDto("Die Basics"),
+        new ModulDto("Herzrythmusstörung"),
+        new ModulDto("Ultraschall"),
+        new ModulDto("Computertomographie"),
+    };
+
+    private ModulDto selectedModule;
+
+    protected override void OnInitialized()
+    {
+    //TODO get List of all modules
+    }
+
+    private async Task<IEnumerable<ModulDto>> searchModule(string searchText)
+    {
+        return await Task.FromResult(modules.Where(x => x.Title.ToLower().Contains(searchText.ToLower())).ToList());
+    }
 }

@@ -1,11 +1,11 @@
-@using SEIIApp.Shared.ContentDto
+@using SEIIApp.Shared.Moduldto
 
 <div class="PostPreviewWrapper">
     @if (_contents.Length > RowCount)
     {
         for (var i = 0; i < RowCount * 3; i++)
         {
-            <ContentPreview Content="_contents[i]"/>
+            <ContentPreview ModulDto="_contents[i]"/>
         }
     }
 </div>
@@ -15,15 +15,15 @@
     [Parameter]
     public int RowCount { get; set; }
     
-    private Content[] _contents = new Content[] {
-        new Paper("Der OP"), 
-        new Paper("Neonatologie"), 
-        new Paper("Diagnose"),
-        new Paper("Test 1"),
-        new Paper("Test 2"),
-        new Paper("Test 3"),
-        new Paper("Test 4"),
-        new Paper("Test 5"),
-        new Paper("Test 6"),
+    private ModulDto[] _contents = new ModulDto[] {
+        new ModulDto("Der OP"), 
+        new ModulDto("Neonatologie"), 
+        new ModulDto("Diagnose"),
+        new ModulDto("Test 1"),
+        new ModulDto("Test 2"),
+        new ModulDto("Test 3"),
+        new ModulDto("Test 4"),
+        new ModulDto("Test 5"),
+        new ModulDto("Test 6"),
     };
 }

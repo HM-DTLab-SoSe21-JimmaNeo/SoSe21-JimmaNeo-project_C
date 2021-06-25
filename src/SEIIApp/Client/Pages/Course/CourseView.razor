@@ -1,14 +1,37 @@
 @page "/course"
 @using SEIIApp.Shared.ContentDto
+@using Blazored.Video
+@using Blazored.Video.Support
 
-<h3>CourseView</h3>
+<div id="CourseViewBody">
+    <div id="CourseViewLeftContainer">
+        <h3 id="CourseTitle">Test Video</h3>
+        <BlazoredVideo Play="OnPlay"
+                       class="w-100"
+                       style="max-width:800px;"
+                       controls="controls">
+            <source src="https://res.cloudinary.com/blazoredgitter/video/upload/v1557015491/samples/elephants.mp4" type="video/mp4"/>
+        </BlazoredVideo>
+    </div>
+    <div id="CourseViewRecommendation">
+
+    </div>
+</div>
+
 
 @code {
+
     [Parameter]
     public Content Content { get; set; }
 
     public void link()
     {
-        
     }
+
+    private void OnPlay(VideoState obj)
+    {
+    }
+
+
+
 }
