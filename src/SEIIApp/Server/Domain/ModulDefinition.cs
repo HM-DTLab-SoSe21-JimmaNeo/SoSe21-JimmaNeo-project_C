@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,6 +16,7 @@ namespace SEIIApp.Server.Domain
 
         public List<EssayDefinition> Essays { get; set; } = new List<EssayDefinition>();
 
+        [ForeignKey("VideoId")]
         public List<VideoDefinition> Videos { get; set; } = new List<VideoDefinition>();
 
         public List<QuizDefinition> Quizes { get; set; } = new List<QuizDefinition>();

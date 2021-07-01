@@ -57,7 +57,14 @@ namespace SEIIApp.Server.Services
             return existingModul;
         }
 
-       
+        public void DeleteModul(int ModulId)
+        {
+            ModulDefinition m = DatabaseContext.ModulDefinition.Where(x => x.ModulId == ModulId).FirstOrDefault();
+            DatabaseContext.ModulDefinition.Remove(m);
+            DatabaseContext.SaveChanges();
+        }
+
+
         public ModulDefinition UploadVideo(int ModulId, VideoDefinition video)
         {
             DatabaseContext.VideoDefinition.Add(video);

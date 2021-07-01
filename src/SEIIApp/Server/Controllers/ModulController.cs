@@ -95,7 +95,19 @@ namespace SEIIApp.Server.Controllers
 
         }
 
-        
+        [HttpDelete("{ModulId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult DeleteModul([FromRoute] int ModulId)
+        {
+            var modul = ModulDefinitonService.GetModulWithId(ModulId);
+            if (modul == null) return StatusCode(StatusCodes.Status404NotFound);
+            ModulDefinitonService.DeleteModul(ModulId);
+            return Ok();
+        }
+
+
         [Route("video")]
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status200OK)]
