@@ -1,0 +1,20 @@
+#CourseViewBody {
+    padding: 80px 120px 50px 120px;
+    alignment: left;
+}
+
+#CourseTitle {
+    margin-bottom: 30px;
+    alignment: top;
+}
+
+#CourseViewRecommendation {
+    alignment: right;
+    width: 400px;
+    height: 500px;
+    border: black solid thin;
+}
+
+#CourseViewLeftContainer {
+    alignment: left;
+}

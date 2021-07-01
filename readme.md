@@ -1,47 +1,20 @@
 # E-Neo
+Das Ziel von "E-Neo" ist es, dem medizinischen Personal in Äthiopien verschiedene Online Sesssions anzubieten, mithilfe einer Web Anwendung. Wichtig hier zu erwähnen, die Web Anwendung soll besonders benutzerfreundlich und klar auf den User zugeschnitten sein. Zusätzlich soll der Spaß Faktor nicht verloren gehen bei der Bedienung, hier zu kommt unser Feature, das Upload Forum zu Gute.
+
+Als Team möchten wir zuerst dem Herr Prof. Kofler ein großes Dank aussprechen, welcher nicht nur uns das Vertrauen gegeben hat solch eine Art von Projekt durchführen zu können sondern auch rund um die Uhr zur Seite stand. Des Weiteren bedanken wir uns natürlich an die Auftraggeber Victoria Lieftüchter und Dr. Tobias Reicherzer für die Möglichkeit am Projekt teilnehemen zu können. Zuletzt auch ein Dank an Lars Schmitz, für dessen Anwesenheit und Mitwirken von AWS.
 
 ## 1 Press Release:
 
-Vorstellung der neuen E-Learning Plattform „e-Neo“:
-Die Kooperation der LMU und der Jimma University Specialized Hospital
-hat die die neue webbasierte Lernumgebung zur Fortbildung von
-medizinischem Personal im Bereich Neonatologie hervorgebracht.
-Studenten der Hochschule München helfen bei der Entwicklung des
-Programmes.
-Die vorherrschende Corona-Pandemie macht es schwer praktisches Wissen
-den Ärzten vor Ort in Jimma näher zu bringen, daher soll die E-Learning
-Plattform "e-Neo“, von der LMU, eine Brücke, für das theoretische Lernen
-und der ausgeübten Praxis bilden.
-Sie soll den dortigen Mitarbeiter, welche am strukturierten
-Fortbildungsprogramm teilnehmen, trotz der pandemischen
-Einschränkungen, eine Möglichkeit bieten, flexibel neue Lerninhalte zu
-erschließen und zu teilen. Dabei kann sich der User auf der Plattform
-anmelden und dort Tests mit Multiple-Choice-Fragen durchführen. Alle
-Kapitel sind modular und themenübergreifend strukturiert, sodass der User
-niemals den roten Faden verliert.
-Ein großes Augenmerk gilt auch der Community-Share Funktion, die es den
-Ärzten ermöglicht, eigenes Wissen, in Form von Videos, Beiträgen oder
-wissenschaftlichen Essays, zu verbreiten und sich untereinander zu
-vernetzen, um so ein Upload Forum für die Neonatologie zu schaffen.
-Die Interaktivität unter einander sowie ein anstoßender Lernprozess durch
-„Learning by doing“ sind hier groß geschrieben und von besonderer
-Bedeutung für die E-Learning Plattform „e-Neo“.
-" Es ist so als würden wir Sie persönlich Vorort unterrichten und die große
-Entfernung keine Rolle mehr spielen würde." (Tobias B., LMU)
-„ Die Community-Share Funktion bietet den Ärzten die Möglichkeit
-persönliches und direktes Feedback zu dem Erlernten zu bekommen.
-Hier kann der Fokus auf ein beliebiges Thema gelegt werden und je nach
-Verlangen ein Erklärungsvideo gedreht oder ein Essay verfasst werden.
-Toller und kreativer Gedanke !“
-Das voraussichtliche Erscheinungsdatum ist für den 25.06.2021 angesetzt.
+- [Press Release](https://gitlab.lrz.de/seii_sose_2021/project_c/-/blob/master/Dokumentation/LMU_TEAM_C_PR.pdf)
 
 ## 2 Anwendungsbeschreibung:
 
-- Quiz:
+- [Login Vorgang](Dokumentation/Login_Ablauf.pdf)
 
-- Forum:
+- [Forum](Dokumentation/Forum_AblaufNeu.pdf)
+- [Motivation](Dokumentation/Motivation_Forum.png)
 
-- Login
+- [Quiz](Dokumentation/Quiz_Ablauf.pdf)
 
 ## 3 SoftwareArchitektur:
 
@@ -82,7 +55,7 @@ In der Startup.cs werden diese durch einen Automapper dann in die Domains gemapp
 
 - [Architektur](Dokumentation/architecktur.pdf)
 
-## 4 Ansprechpartner:
+## 4 Team und Ansprechpartner:
 
 Das Team "e-Neo"(Gruppe C) besteht aus sieben Teammitgliedern:
 
@@ -100,6 +73,7 @@ Frontend:
 -> UploadForum (Emre und Constantin)
 -> Quiz (Alina und Stefan)
 -> Login (Daniel)
+-> UI (Kevin und Emre)
 
 Backend:
 -> (Leon und Kevin)

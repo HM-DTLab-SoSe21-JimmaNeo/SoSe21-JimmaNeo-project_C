@@ -1,0 +1,107 @@
+@page "/Profile"
+@using SEIIApp.Shared
+@using SEIIApp.Client.Shared.Components
+@using SEIIApp.Shared.ContentDto
+@using SEIIApp.Shared.Moduldto
+@using System.Reflection.Metadata
+@using System.Text.Json.Serialization
+@using System.Xml.Schema
+@using AntDesign
+@using Upload = SEIIApp.Client.Pages.Profile.UploadPopUp
+@using Microsoft.AspNetCore.Components.Web
+@inject IJSRuntime JS
+
+@inject IModalService modal
+
+<div class="container">
+  <div class="main-body">
+    <div class="row gutters-sm">
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center text-center">
+              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+              <div class="mt-3">
+                <h4>@User.UserName</h4>
+                <button class="btn-block">Your Videos</button>
+                <button class="btn-block" @onclick="()=> showPopup = true">Upload</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mt-3">
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Full Name</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                @User.SurName @User.LastName
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Email</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                @User.Email
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Registration Date</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                @User.RegisterDate
+              </div>
+            </div>
+            <hr>
+          </div>
+        </div>
+
+        <div class="row gutters-sm">
+          <div class="col-sm-6 mb-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <h6 class="d-flex align-items-center mb-3">Top Liked Module</h6>
+                <div>
+                  <ContentPreview ModulDto="Module"></ContentPreview>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <h6 class="d-flex align-items-center mb-3">Newest Module</h6>
+                <ContentPreview ModulDto="Module"></ContentPreview>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+@if (showPopup)
+{
+  modal.Show<Upload>();
+}
+
+@code {
+  public UserDto User = new UserDto();
+  public String UserID { get; set; }
+  public ModulDto Module = new ModulDto("test");
+  bool showPopup;
+
+}

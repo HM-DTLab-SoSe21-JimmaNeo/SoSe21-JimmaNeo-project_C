@@ -15,5 +15,17 @@ namespace SEIIApp.Shared
         public DateTime UploadDate { get; set; }
 
         public byte[] Content { get; set; }
+
+        public EssayDto(string title)
+        {
+            Title = title;
+        }
+
+        public EssayDto(string title, DateTime uploadDate, byte[] content)
+        {
+            Title = title;
+            UploadDate = uploadDate;
+            Content = content;
+        }
     }
 }

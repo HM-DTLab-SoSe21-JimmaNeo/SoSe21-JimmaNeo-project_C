@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace SEIIApp.Shared
+namespace SEIIApp.Shared.Moduldto
 {
     public class ModulDto
     {
@@ -16,5 +12,12 @@ namespace SEIIApp.Shared
 
         public List<VideoDto> Videos { get; set; } = new List<VideoDto>();
         public List<QuizDto> Quizes { get; set; } = new List<QuizDto>();
+
+        public ModulDto(string title)
+        {
+            Title = title;
+        }
+        
+        
     }
 }

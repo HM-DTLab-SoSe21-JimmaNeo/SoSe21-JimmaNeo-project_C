@@ -1,0 +1,76 @@
+@page "/UploadModule"
+@using System.IO
+@using Microsoft.Extensions.Logging
+@using SEIIApp.Shared
+@using SEIIApp.Shared.Moduldto
+
+<div class="uploadPage">
+    <h5 style="margin-bottom: 60px">Upload Your Files</h5>
+    <div style="margin-bottom: 15px">Title</div>
+     @Title
+     <input type="text" @bind="@Title" @oninput="@((e) => { Title=(string)e.Value;})" style="margin-bottom: 30px"/>
+    <div class="dropzone" style="margin-bottom: 30px">
+        <InputFile OnChange="@LoadFiles"/>
+    </div>
+    
+    <button style="margin-top: 30px; alignment: left" onclick="@upload()">Upload</button>
+</div>
+
+
+@code {
+    private List<Byte[]> loadedFiles = new();
+    private long maxFileSize = 1024 * 15;
+    //Can be changed to upload multiple files(maybe for later)
+    private int maxAllowedFiles = 1;
+    private bool isLoading;
+    private String Title;
+
+    private void LoadFiles(InputFileChangeEventArgs e)
+    {
+        byte[] data = null;
+        isLoading = true;
+        loadedFiles.Clear();
+        
+        foreach (var file in e.GetMultipleFiles(maxAllowedFiles))
+        {
+            try
+            {
+                if (file.Size > 0)
+                {
+                    using var ms = new MemoryStream();
+                    var buffer = new byte[512];
+                    var bytesRead = default(int);
+                    while ((bytesRead = file.OpenReadStream().Read(buffer, 0, buffer.Length)) > 0) 
+                        ms.Write(buffer, 0, bytesRead);
+                    data = ms.ToArray();
+                    {
+                            
+                    }
+                }
+                loadedFiles.Add(data);
+            }
+            catch (Exception ex)
+            {
+                Console.Error.Write("File: {Filename} Error: {Error}", 
+                    file.Name, ex.Message);
+            }
+        }
+
+        isLoading = false;
+    }
+
+    private bool upload()
+    {
+
+        ModulDto module = new ModulDto(Title);
+        foreach (var uploadedFile in loadedFiles)
+        {
+            EssayDto essay = new EssayDto(Title, DateTime.Now, uploadedFile);
+            module.Essays.Add(essay);
+        }
+
+        
+        //TODO database access
+        return true;
+    }
+}

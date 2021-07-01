@@ -14,27 +14,14 @@
 
 #logoDark {
     float: left;
-    width: 140px;
     padding-top: 12px;
     margin-right: 40px;
     
 }
 
-.searchbarContainer {
-    float: left;
-    margin: 25px;
-}
-
 .topNavLinks {
     float: right;
     height: 80px;
-}
-
-#accountCircle {
-    float: right;
-    width: 50px;
-    margin-top: 15px;
-    margin-left: 40px;
 }
 
 .topNav a {
@@ -55,14 +42,15 @@
 
 .searchbar {
     width: 350px;
-    background-color: #49505c;
+    background-color: #ffffff;
     border-radius: 10px;
     border: 1px solid #ffffff;
     outline: 0;
     padding-left: 10px;
     padding-bottom: 3px;
-    
+    color: aliceblue;
 }
+
 
 .searchbar:focus {
     border: 1px solid #1aba9f;
@@ -74,4 +62,8 @@
 
 .searchbar::placeholder {
     color: #ffffff;
+}
+
+#profileButton {
+    float: right;
 }

@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Blazored.Modal;
 
 namespace SEIIApp.Client
 {
@@ -18,6 +19,7 @@ namespace SEIIApp.Client
 
             // Add Client service Auf Basis Scoped fuer die Posts 
             builder.Services.AddScoped<Services.PostServiceAccess>();
+            builder.Services.AddBlazoredModal();
             await builder.Build().RunAsync();
         }
     }
